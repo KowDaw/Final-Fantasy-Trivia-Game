@@ -37,3 +37,10 @@ class Screen(Frame):
     def handle_hover(self, item, should_hover=False):
         appropirate_color = self.HOVER_COLOR if should_hover else self.TEXT_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)
+
+    def confirm_dialog(self, dialog, screen_to_go, title):
+        dialog.destroy()
+        self.master.load_screen(screen_to_go, title)
+
+    def cancel_dialog(self, dialog):
+        dialog.destroy()
