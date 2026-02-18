@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the main protagonist of Final Fantasy II?",
+    "answers": ["Firion", "Cecil", "Bartz", "Vaan"],
+    "right_answer": "Firion"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of the empire that serves as the main enemy faction?",
+    "answers": ["The Palamecian Empire", "The Archadian Empire", "The Gestahlian Empire", "The Nilfgaard Empire"],
+    "right_answer": "The Palamecian Empire"
+  },
+  {
+    "id": 3,
+    "question": "Which princess leads the rebellion against the Empire?",
+    "answers": ["Princess Hilda", "Princess Sarah", "Princess Ashe", "Princess Lenna"],
+    "right_answer": "Princess Hilda"
+  },
+  {
+    "id": 4,
+    "question": "Which weapon type is associated with the Dragoon class in Final Fantasy II?",
+    "answers": ["Lance", "Sword", "Bow", "Axe"],
+    "right_answer": "Lance"
+  },
+  {
+    "id": 5,
+    "question": "Who is the Emperor’s powerful right-hand man?",
+    "answers": ["Dark Knight", "Golbez", "Cid", "Borgan"],
+    "right_answer": "Dark Knight"
+  },
+  {
+    "id": 6,
+    "question": "What unique leveling system does Final Fantasy II use?",
+    "answers": ["Stat growth by action", "Traditional experience levels", "Job points", "Skill trees"],
+    "right_answer": "Stat growth by action"
+  },
+  {
+    "id": 7,
+    "question": "What is the name of the rebel base at the beginning of the game?",
+    "answers": ["Altair", "Fynn", "Palamecia", "Mysidia"],
+    "right_answer": "Altair"
+  },
+  {
+    "id": 8,
+    "question": "Which airship pilot helps the party throughout their journey?",
+    "answers": ["Cid", "Biggs", "Wedge", "Bikke"],
+    "right_answer": "Cid"
+  },
+  {
+    "id": 9,
+    "question": "What is the name of Firion’s childhood friend who joins the party?",
+    "answers": ["Maria", "Rydia", "Rosa", "Yuna"],
+    "right_answer": "Maria"
+  },
+  {
+    "id": 10,
+    "question": "Which weapon does Firion often use in official artwork?",
+    "answers": ["Sword", "Spear", "Bow", "Axe"],
+    "right_answer": "Sword"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of the white-haired ally who sacrifices himself during the story?",
+    "answers": ["Josef", "Minwu", "Leila", "Ricard"],
+    "right_answer": "Minwu"
+  },
+  {
+    "id": 12,
+    "question": "What type of creature is the Chocobo, first introduced in Final Fantasy II?",
+    "answers": ["A large bird used for travel", "A dragon", "A summoned monster", "A wild beast enemy"],
+    "right_answer": "A large bird used for travel"
+  },
+  {
+    "id": 13,
+    "question": "What is the name of the town that is the Empire’s capital?",
+    "answers": ["Palamecia", "Altair", "Bafsk", "Fynn"],
+    "right_answer": "Palamecia"
+  },
+  {
+    "id": 14,
+    "question": "Which character is a pirate who becomes an ally?",
+    "answers": ["Leila", "Faris", "Bikke", "Rikku"],
+    "right_answer": "Leila"
+  },
+  {
+    "id": 15,
+    "question": "Which powerful spell instantly defeats enemies by banishing them?",
+    "answers": ["Warp", "Flare", "Holy", "Stop"],
+    "right_answer": "Warp"
+  },
+  {
+    "id": 16,
+    "question": "What is the ultimate black magic spell in Final Fantasy II?",
+    "answers": ["Flare", "Meteor", "Ultima", "Comet"],
+    "right_answer": "Ultima"
+  },
+  {
+    "id": 17,
+    "question": "Who is the Dragoon that joins the party later in the game?",
+    "answers": ["Ricard", "Kain", "Cid", "Auron"],
+    "right_answer": "Ricard"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of the sea vessel the heroes use?",
+    "answers": ["Dreadnought", "Invincible", "Enterprise", "Highwind"],
+    "right_answer": "Dreadnought"
+  },
+  {
+    "id": 19,
+    "question": "What type of magic is used to restore health?",
+    "answers": ["White Magic", "Black Magic", "Green Magic", "Blue Magic"],
+    "right_answer": "White Magic"
+  },
+  {
+    "id": 20,
+    "question": "What object does the Emperor use to summon monsters?",
+    "answers": ["Cyclone", "Crystal", "Dark Orb", "Magicite"],
+    "right_answer": "Cyclone"
+  }
+]

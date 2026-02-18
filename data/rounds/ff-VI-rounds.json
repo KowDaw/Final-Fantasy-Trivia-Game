@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the main female protagonist of Final Fantasy VI?",
+    "answers": ["Terra Branford", "Celes Chere", "Tifa Lockhart", "Rydia"],
+    "right_answer": "Terra Branford"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of the empire that seeks to control the world?",
+    "answers": ["The Gestahlian Empire", "The Garlean Empire", "Baron", "Vector Union"],
+    "right_answer": "The Gestahlian Empire"
+  },
+  {
+    "id": 3,
+    "question": "Who is the insane clown and one of the main antagonists of the game?",
+    "answers": ["Kefka Palazzo", "Exdeath", "Sephiroth", "Golbez"],
+    "right_answer": "Kefka Palazzo"
+  },
+  {
+    "id": 4,
+    "question": "What kind of being is Terra revealed to be part of?",
+    "answers": ["Esper", "Cetra", "L'Cie", "Fayth"],
+    "right_answer": "Esper"
+  },
+  {
+    "id": 5,
+    "question": "Who is the treasure hunter that insists he’s not a thief?",
+    "answers": ["Locke Cole", "Edgar Figaro", "Shadow", "Sabin Figaro"],
+    "right_answer": "Locke Cole"
+  },
+  {
+    "id": 6,
+    "question": "What are Espers used for in the world of Final Fantasy VI?",
+    "answers": ["Summoning magic", "Transportation", "Forging weapons", "Healing the sick"],
+    "right_answer": "Summoning magic"
+  },
+  {
+    "id": 7,
+    "question": "What is the name of the twin brothers from Figaro?",
+    "answers": ["Edgar and Sabin", "Locke and Shadow", "Cid and Setzer", "Vicks and Wedge"],
+    "right_answer": "Edgar and Sabin"
+  },
+  {
+    "id": 8,
+    "question": "Which of the following is Edgar’s main weapon type?",
+    "answers": ["Tools", "Swords", "Spears", "Daggers"],
+    "right_answer": "Tools"
+  },
+  {
+    "id": 9,
+    "question": "What is the name of the ninja mercenary who fights for money?",
+    "answers": ["Shadow", "Cyan", "Sabin", "Gau"],
+    "right_answer": "Shadow"
+  },
+  {
+    "id": 10,
+    "question": "Who is Cyan Garamonde?",
+    "answers": ["A loyal knight from Doma", "A pirate from the south seas", "A monk from Figaro", "A bandit leader"],
+    "right_answer": "A loyal knight from Doma"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of the wild boy who lives on the Veldt?",
+    "answers": ["Gau", "Mog", "Umaro", "Relm"],
+    "right_answer": "Gau"
+  },
+  {
+    "id": 12,
+    "question": "Which character is a gambler and airship owner?",
+    "answers": ["Setzer Gabbiani", "Edgar Figaro", "Shadow", "Locke Cole"],
+    "right_answer": "Setzer Gabbiani"
+  },
+  {
+    "id": 13,
+    "question": "Who is the gifted artist and young mage in the game?",
+    "answers": ["Relm Arrowny", "Terra Branford", "Celes Chere", "Strago Magus"],
+    "right_answer": "Relm Arrowny"
+  },
+  {
+    "id": 14,
+    "question": "What is the name of Relm’s grandfather, who is a blue mage?",
+    "answers": ["Strago Magus", "Cid Del Norte Marquez", "Gau", "Cyan"],
+    "right_answer": "Strago Magus"
+  },
+  {
+    "id": 15,
+    "question": "Which race once lived alongside humans before being sealed away?",
+    "answers": ["Espers", "Moogles", "Vieras", "Dragoons"],
+    "right_answer": "Espers"
+  },
+  {
+    "id": 16,
+    "question": "What musical instrument does the iconic 'Opera House' scene prominently feature?",
+    "answers": ["An organ", "A harp", "A piano", "A violin"],
+    "right_answer": "An organ"
+  },
+  {
+    "id": 17,
+    "question": "What is the name of the world after it is transformed later in the game?",
+    "answers": ["The World of Ruin", "The Void", "The Second World", "The Crystal World"],
+    "right_answer": "The World of Ruin"
+  },
+  {
+    "id": 18,
+    "question": "Which adorable creatures help the heroes in a few battles?",
+    "answers": ["Moogles", "Chocobos", "Tonberries", "Cactuars"],
+    "right_answer": "Moogles"
+  },
+  {
+    "id": 19,
+    "question": "What is the name of Celes’s special command ability?",
+    "answers": ["Runic", "Magic", "Sketch", "Rage"],
+    "right_answer": "Runic"
+  },
+  {
+    "id": 20,
+    "question": "Which powerful esper is known as the god of magic?",
+    "answers": ["Kefka", "Bahamut", "Ultima", "Raiden"],
+    "right_answer": "Ultima"
+  }
+]

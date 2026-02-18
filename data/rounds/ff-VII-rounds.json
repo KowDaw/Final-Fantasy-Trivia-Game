@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the main protagonist of Final Fantasy VII?",
+    "answers": ["Cloud Strife", "Zack Fair", "Squall Leonhart", "Tidus"],
+    "right_answer": "Cloud Strife"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of the powerful company that exploits Mako energy?",
+    "answers": ["Shinra Electric Power Company", "Umbrella Coproration", "Midgar Corporation", "Nibelheim Industries"],
+    "right_answer": "Shinra Electric Power Company"
+  },
+  {
+    "id": 3,
+    "question": "What is the name of the eco-terrorist group that opposes Shinra?",
+    "answers": ["Avalanche", "The Turks", "SeeD", "Guardians"],
+    "right_answer": "Avalanche"
+  },
+  {
+    "id": 4,
+    "question": "Who is the flower seller from the Sector 5 slums?",
+    "answers": ["Aerith Gainsborough", "Tifa Lockhart", "Yuffie Kisaragi", "Rinoa Heartilly"],
+    "right_answer": "Aerith Gainsborough"
+  },
+  {
+    "id": 5,
+    "question": "Which city serves as the main industrial hub of Shinra?",
+    "answers": ["Midgar", "Nibelheim", "Junon", "Kalm"],
+    "right_answer": "Midgar"
+  },
+  {
+    "id": 6,
+    "question": "What is the name of Cloud’s hometown?",
+    "answers": ["Nibelheim", "Kalm", "Junon", "Gongaga"],
+    "right_answer": "Nibelheim"
+  },
+  {
+    "id": 7,
+    "question": "Which weapon does Cloud primarily use?",
+    "answers": ["Buster Sword", "Gunblade", "Katana", "Spear"],
+    "right_answer": "Buster Sword"
+  },
+  {
+    "id": 8,
+    "question": "Who is the leader of Avalanche?",
+    "answers": ["Barret Wallace", "Tifa Lockhart", "Cid Highwind", "Reeve Tuesti"],
+    "right_answer": "Barret Wallace"
+  },
+  {
+    "id": 9,
+    "question": "Which character runs the 7th Heaven bar in Midgar?",
+    "answers": ["Tifa Lockhart", "Aerith Gainsborough", "Yuffie Kisaragi", "Elena"],
+    "right_answer": "Tifa Lockhart"
+  },
+  {
+    "id": 10,
+    "question": "What are the magical orbs used to cast spells called?",
+    "answers": ["Materia", "Magicite", "Espers", "Runes"],
+    "right_answer": "Materia"
+  },
+  {
+    "id": 11,
+    "question": "Which character pilots the airship called the Highwind?",
+    "answers": ["Cid Highwind", "Reeve Tuesti", "Barret Wallace", "Rufus Shinra"],
+    "right_answer": "Cid Highwind"
+  },
+  {
+    "id": 12,
+    "question": "What is the name of Sephiroth’s sword?",
+    "answers": ["Masamune", "Muramasa", "Zantetsuken", "Yoshimitsu"],
+    "right_answer": "Masamune"
+  },
+  {
+    "id": 13,
+    "question": "What creature species is Red XIII part of?",
+    "answers": ["Cetra-like beast", "Wolf", "Chocobo", "Human hybrid"],
+    "right_answer": "Cetra-like beast"
+  },
+  {
+    "id": 14,
+    "question": "What is the name of the large cannon built in Junon?",
+    "answers": ["Sister Ray", "Big Gun", "Omega Cannon", "Ultima Weapon"],
+    "right_answer": "Sister Ray"
+  },
+  {
+    "id": 15,
+    "question": "What is the name of Shinra's elite task force?",
+    "answers": ["The Turks", "The Guardians", "The SeeDs", "The Hunters"],
+    "right_answer": "The Turks"
+  },
+  {
+    "id": 16,
+    "question": "Who is Shinra's president at the start of the game?",
+    "answers": ["President Shinra", "Rufus Shinra", "Hojo", "Heidegger"],
+    "right_answer": "President Shinra"
+  },
+  {
+    "id": 17,
+    "question": "Which character is a ninja from Wutai?",
+    "answers": ["Yuffie Kisaragi", "Tifa Lockhart", "Elena", "Jessie"],
+    "right_answer": "Yuffie Kisaragi"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of the talking dog-like companion in the party?",
+    "answers": ["Red XIII", "Cait Sith", "Nanaki", "Mog"],
+    "right_answer": "Red XIII"
+  },
+  {
+    "id": 19,
+    "question": "Which corporation is responsible for creating SOLDIER?",
+    "answers": ["Shinra Electric Power Company", "Avalanche", "Midgar Labs", "Hojo Research"],
+    "right_answer": "Shinra Electric Power Company"
+  },
+  {
+    "id": 20,
+    "question": "What powerful summon is associated with fire?",
+    "answers": ["Ifrit", "Bahamut", "Shiva", "Ramuh"],
+    "right_answer": "Ifrit"
+  }
+]

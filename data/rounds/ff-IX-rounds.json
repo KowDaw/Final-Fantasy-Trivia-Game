@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the main protagonist of Final Fantasy IX?",
+    "answers": ["Zidane Tribal", "Cloud Strife", "Squall Leonhart", "Tidus"],
+    "right_answer": "Zidane Tribal"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of the kingdom where Princess Garnet is from?",
+    "answers": ["Alexandria", "Lindblum", "Burmecia", "Cleyra"],
+    "right_answer": "Alexandria"
+  },
+  {
+    "id": 3,
+    "question": "Which character is known for being a thief and having a tail?",
+    "answers": ["Zidane Tribal", "Vivi Ornitier", "Freya Crescent", "Eiko Carol"],
+    "right_answer": "Zidane Tribal"
+  },
+  {
+    "id": 4,
+    "question": "What is the name of Vivi’s mentor in black magic?",
+    "answers": ["Vivi does not have a mentor", "Kuja", "Black Waltz", "Cid Fabool"],
+    "right_answer": "Vivi does not have a mentor"
+  },
+  {
+    "id": 5,
+    "question": "Which of the following summons does not appear in Final Fantasy IX?",
+    "answers": ["Diablos", "Bahamut", "Ifrit", "Shiva"],
+    "right_answer": "Diablos"
+  },
+  {
+    "id": 6,
+    "question": "What type of creature is Freya Crescent?",
+    "answers": ["Dragon Knight", "Human", "Moogle", "Blue Mage"],
+    "right_answer": "Dragon Knight"
+  },
+  {
+    "id": 7,
+    "question": "Which character is an inventor and pilot of an airship?",
+    "answers": ["Cid Fabool", "Steiner", "Kuja", "Amarant"],
+    "right_answer": "Cid Fabool"
+  },
+  {
+    "id": 8,
+    "question": "What is the primary weapon of Steiner?",
+    "answers": ["Sword", "Bow", "Spear", "Staff"],
+    "right_answer": "Sword"
+  },
+  {
+    "id": 9,
+    "question": "Which character is a black mage with a shy and innocent personality?",
+    "answers": ["Vivi", "Garnet", "Eiko", "Freya"],
+    "right_answer": "Vivi"
+  },
+  {
+    "id": 10,
+    "question": "Who is the main antagonist of Final Fantasy IX?",
+    "answers": ["Kuja", "Garland", "Beatrix", "Brahne"],
+    "right_answer": "Kuja"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of the village where Vivi lives at the start of the game?",
+    "answers": ["Black Mage Village", "Lindblum", "Treno", "Dali"],
+    "right_answer": "Black Mage Village"
+  },
+  {
+    "id": 12,
+    "question": "Which character is revealed to be a summoner like Eiko?",
+    "answers": ["Garnet", "Freya", "Vivi", "Amarant"],
+    "right_answer": "Garnet"
+  },
+  {
+    "id": 13,
+    "question": "What is the name of the airship used by the Tantalus Theater Troupe?",
+    "answers": ["Hilda Garde", "Prima Vista", "Invincible", "Biggs’ Ship"],
+    "right_answer": "Prima Vista"
+  },
+  {
+    "id": 14,
+    "question": "Which spell does Vivi frequently use in battle?",
+    "answers": ["Fire", "Cure", "Black Hole", "Holy"],
+    "right_answer": "Fire"
+  },
+  {
+    "id": 15,
+    "question": "Which kingdom is destroyed by Kuja’s forces early in the game?",
+    "answers": ["Burmecia", "Alexandria", "Lindblum", "Cleyra"],
+    "right_answer": "Burmecia"
+  },
+  {
+    "id": 16,
+    "question": "What race is Eiko Carol?",
+    "answers": ["Moogle", "Human", "Black Mage", "Summoner"],
+    "right_answer": "Summoner"
+  },
+  {
+    "id": 17,
+    "question": "Which character uses a spear as weapon?",
+    "answers": ["Amarant", "Zidane", "Steiner", "Freya"],
+    "right_answer": "Freya"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of Eiko's home?",
+    "answers": ["Madain Sari", "Mist Forest", "Mist Village", "Black Mage Village"],
+    "right_answer": "Madain Sari"
+  },
+  {
+    "id": 19,
+    "question": "Which character is a loyal knight serving Princess Garnet?",
+    "answers": ["Steiner", "Zidane", "Amarant", "Vivi"],
+    "right_answer": "Steiner"
+  },
+  {
+    "id": 20,
+    "question": "What is Kuja’s ultimate plan in the game?",
+    "answers": ["Destroy Gaia and reach Terra", "Take over Lindblum", "Steal the Hilda Garde airship", "Free the Black Mages"],
+    "right_answer": "Destroy Gaia and reach Terra"
+  }
+]

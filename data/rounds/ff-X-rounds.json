@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "What is the name of the main protagonist of Final Fantasy X?",
+    "answers": ["Tidus", "Wakka", "Auron", "Lulu"],
+    "right_answer": "Tidus"
+  },
+  {
+    "id": 2,
+    "question": "Which city is Tidus originally from?",
+    "answers": ["Zanarkand", "Bevelle", "Macalania", "Besaid"],
+    "right_answer": "Zanarkand"
+  },
+  {
+    "id": 3,
+    "question": "Who is the summoner that Tidus accompanies on her pilgrimage?",
+    "answers": ["Yuna", "Rikku", "Paine", "Lulu"],
+    "right_answer": "Yuna"
+  },
+  {
+    "id": 4,
+    "question": "What is the name of Yuna's guardian who wields swords and was once a famed warrior?",
+    "answers": ["Auron", "Wakka", "Tidus", "Kimahri"],
+    "right_answer": "Auron"
+  },
+  {
+    "id": 5,
+    "question": "What creature is used as the final boss weapon known as the \"Weapon\"?",
+    "answers": ["Sin", "Omega Ruins", "Bahamut", "Yu Yevon"],
+    "right_answer": "Sin"
+  },
+  {
+    "id": 6,
+    "question": "Which sports game is played on the beaches of Spira?",
+    "answers": ["Blitzball", "Sphere Break", "Thunderball", "Tideball"],
+    "right_answer": "Blitzball"
+  },
+  {
+    "id": 7,
+    "question": "Which pilgrimage location is known for its shimmering, icy forest and glowing lake?",
+    "answers": ["Macalania", "Djose", "Luca", "Kilika"],
+    "right_answer": "Macalania"
+  },
+  {
+    "id": 8,
+    "question": "What is the name of Yuna’s younger cousin who is a member of the Al Bhed?",
+    "answers": ["Rikku", "Cid", "Brother", "Tidus"],
+    "right_answer": "Rikku"
+  },
+  {
+    "id": 9,
+    "question": "Which guardian uses a blitzball as his weapon?",
+    "answers": ["Wakka", "Lulu", "Kimahri", "Auron"],
+    "right_answer": "Wakka"
+  },
+  {
+    "id": 10,
+    "question": "What is the name of the main force opposing Sin’s destruction?",
+    "answers": ["The Fayth", "The Bevelle Priests", "The Youth League", "The Al Bhed"],
+    "right_answer": "The Al Bhed"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of Kimahri’s tribe?",
+    "answers": ["Ronso", "Machina", "Guado", "Luca Guard"],
+    "right_answer": "Ronso"
+  },
+  {
+    "id": 12,
+    "question": "Which character is a powerful black mage and a scholar from Bevelle?",
+    "answers": ["Lulu", "Yuna", "Rikku", "Paine"],
+    "right_answer": "Lulu"
+  },
+  {
+    "id": 13,
+    "question": "What is the ultimate Aeon that Yuna obtains by combining all intermediate aeons?",
+    "answers": ["Anima", "Valefor", "Ixion", "Shiva"],
+    "right_answer": "Anima"
+  },
+  {
+    "id": 14,
+    "question": "Which key item is needed to obtain Celestial Weapons?",
+    "answers": ["Celestial Mirror", "Airship Pass", "Aeon Memory", "Sun Crest"],
+    "right_answer": "Celestial Mirror"
+  },
+  {
+    "id": 15,
+    "question": "What is the name of the city famous for its Blitzball stadium?",
+    "answers": ["Luca", "Kilika", "Macalania", "Bevelle"],
+    "right_answer": "Luca"
+  },
+  {
+    "id": 16,
+    "question": "Which guardian can use machina weapons later in the game?",
+    "answers": ["Rikku", "Lulu", "Wakka", "Auron"],
+    "right_answer": "Rikku"
+  },
+  {
+    "id": 17,
+    "question": "What is the name of the place where spirits of the dead gather?",
+    "answers": ["The Farplane", "The Calm Lands", "Zanarkand", "The Moonflow"],
+    "right_answer": "The Farplane"
+  },
+  {
+    "id": 18,
+    "question": "Which accessory prevents all negative status effects?",
+    "answers": ["Ribbon", "Tetra Master", "Wizard's Bracelet", "Star Pendant"],
+    "right_answer": "Ribbon"
+  },
+  {
+    "id": 19,
+    "question": "Which character strongly believes in Yevon's teachings at the start of the game?",
+    "answers": ["Wakka", "Lulu", "Auron", "Rikku"],
+    "right_answer": "Wakka"
+  },
+  {
+    "id": 20,
+    "question": "What is the name of the creature that the summoners seek to defeat during their pilgrimage?",
+    "answers": ["Sin", "Bahamut", "Omega Weapon", "Anima"],
+    "right_answer": "Sin"
+  }
+]

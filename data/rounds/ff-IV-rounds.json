@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the main protagonist of Final Fantasy IV?",
+    "answers": ["Cecil Harvey", "Kain Highwind", "Rydia", "Edge"],
+    "right_answer": "Cecil Harvey"
+  },
+  {
+    "id": 2,
+    "question": "What is Cecil’s starting job class?",
+    "answers": ["Dark Knight", "Paladin", "Dragoon", "Monk"],
+    "right_answer": "Dark Knight"
+  },
+  {
+    "id": 3,
+    "question": "Which kingdom does Cecil serve at the beginning of the game?",
+    "answers": ["Baron", "Fabul", "Mysidia", "Troia"],
+    "right_answer": "Baron"
+  },
+  {
+    "id": 4,
+    "question": "Who is Cecil’s best friend and fellow warrior in Baron?",
+    "answers": ["Kain Highwind", "Edge", "Tellah", "Yang"],
+    "right_answer": "Kain Highwind"
+  },
+  {
+    "id": 5,
+    "question": "What is the name of Cecil’s love interest?",
+    "answers": ["Rosa", "Rydia", "Porom", "Anna"],
+    "right_answer": "Rosa"
+  },
+  {
+    "id": 6,
+    "question": "Which kingdom is home to monks and martial artists?",
+    "answers": ["Fabul", "Mysidia", "Troia", "Baron"],
+    "right_answer": "Fabul"
+  },
+  {
+    "id": 7,
+    "question": "What magical girl joins Cecil early in his journey?",
+    "answers": ["Rydia", "Porom", "Anna", "Palom"],
+    "right_answer": "Rydia"
+  },
+  {
+    "id": 8,
+    "question": "What is the name of the ship that can travel over lava?",
+    "answers": ["Enterprise", "Falcon", "Lunar Whale", "Invincible"],
+    "right_answer": "Falcon"
+  },
+  {
+    "id": 9,
+    "question": "Which pair of twins from Mysidia can use both black and white magic?",
+    "answers": ["Palom and Porom", "Anna and Tellah", "Cid and Yang", "Rosa and Rydia"],
+    "right_answer": "Palom and Porom"
+  },
+  {
+    "id": 10,
+    "question": "Which kingdom is known for its mages and devotion to the Crystals?",
+    "answers": ["Mysidia", "Troia", "Fabul", "Eblan"],
+    "right_answer": "Mysidia"
+  },
+  {
+    "id": 11,
+    "question": "Who is the wise old sage that seeks revenge for his daughter’s death?",
+    "answers": ["Tellah", "Yang", "Cid", "Fusoya"],
+    "right_answer": "Tellah"
+  },
+  {
+    "id": 12,
+    "question": "Which element does the first Crystal Cecil retrieves belong to?",
+    "answers": ["Water", "Earth", "Fire", "Air"],
+    "right_answer": "Water"
+  },
+  {
+    "id": 13,
+    "question": "What is the name of the ninja prince from Eblan?",
+    "answers": ["Edge", "Yang", "Kain", "Cid"],
+    "right_answer": "Edge"
+  },
+  {
+    "id": 14,
+    "question": "Which engineer helps build and maintain airships?",
+    "answers": ["Cid", "Tellah", "Edge", "Yang"],
+    "right_answer": "Cid"
+  },
+  {
+    "id": 15,
+    "question": "What is the name of the group that controls the four elemental fiends?",
+    "answers": ["The Archfiends", "The Espers", "The Judges", "The Magus Sisters"],
+    "right_answer": "The Archfiends"
+  },
+  {
+    "id": 16,
+    "question": "Which martial artist from Fabul joins Cecil’s team?",
+    "answers": ["Yang", "Edge", "Cid", "Kain"],
+    "right_answer": "Yang"
+  },
+  {
+    "id": 17,
+    "question": "What location serves as a floating kingdom beneath the surface?",
+    "answers": ["The Underworld", "The Moon", "Baron", "Fabul"],
+    "right_answer": "The Underworld"
+  },
+  {
+    "id": 18,
+    "question": "Which magical summon is associated with Rydia early in the story?",
+    "answers": ["Mist Dragon", "Ifrit", "Titan", "Leviathan"],
+    "right_answer": "Mist Dragon"
+  },
+  {
+    "id": 19,
+    "question": "Who is the King of Baron at the start of the game?",
+    "answers": ["King of Baron", "King Cecil", "King Fabul", "King Mysidia"],
+    "right_answer": "King of Baron"
+  },
+  {
+    "id": 20,
+    "question": "What must Cecil overcome to change his destiny and seek redemption?",
+    "answers": ["His dark past", "The Crystal curse", "The loss of his airship", "A magical trial in Mysidia"],
+    "right_answer": "His dark past"
+  }
+]

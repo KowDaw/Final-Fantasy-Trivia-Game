@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "What does GF stand for in Final Fantasy VIII?",
+    "answers": ["Guardian Force", "Glamour Force", "Giga Force", "Grand Force"],
+    "right_answer": "Guardian Force"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of Rinoa's dog?",
+    "answers": ["Angelo", "Guardia", "Mog", "Chocobo"],
+    "right_answer": "Angelo"
+  },
+  {
+    "id": 3,
+    "question": "Which card game is played throughout Final Fantasy VIII?",
+    "answers": ["Triple Triad", "Tetra Master", "Gwent", "Card Break"],
+    "right_answer": "Triple Triad"
+  },
+  {
+    "id": 4,
+    "question": "What is the name of Squall's rival?",
+    "answers": ["Seifer", "Irvine", "Zell", "Kiros"],
+    "right_answer": "Seifer"
+  },
+  {
+    "id": 5,
+    "question": "What is the default name of the lion on Squall's necklace?",
+    "answers": ["Griever", "Leon", "Lionheart", "Regal"],
+    "right_answer": "Griever"
+  },
+  {
+    "id": 6,
+    "question": "Which GF has the Water element?",
+    "answers": ["Leviathan", "Shiva", "Ifrit", "Triton"],
+    "right_answer": "Leviathan"
+  },
+  {
+    "id": 7,
+    "question": "During the final boss fight, which spell can you Draw that is unusual to get?",
+    "answers": ["Apocalypse", "Meteor", "Holy", "Ultima"],
+    "right_answer": "Apocalypse"
+  },
+  {
+    "id": 8,
+    "question": "What is the name of the prison where Squall and the party are held?",
+    "answers": ["D-District Prison", "Galbadia Dungeon", "G Prison", "Desert Prison"],
+    "right_answer": "D-District Prison"
+  },
+  {
+    "id": 9,
+    "question": "What is the highest SeeD rank you can achieve?",
+    "answers": ["A", "Elite", "S", "Rank 30"],
+    "right_answer": "A"
+  },
+  {
+    "id": 10,
+    "question": "Which of these spells gives the biggest HP boost when junctioned?",
+    "answers": ["Ultima", "Holy", "Full-Life", "Regen"],
+    "right_answer": "Ultima"
+  },
+    {
+    "id": 11,
+    "question": "What weapon does Squall use in battle?",
+    "answers": ["Gunblade", "Katana", "Spear", "Great Sword"],
+    "right_answer": "Gunblade"
+  },
+  {
+    "id": 12,
+    "question": "Which character is known for his martial arts fighting style?",
+    "answers": ["Zell Dincht", "Seifer Almasy", "Irvine Kinneas", "Laguna Loire"],
+    "right_answer": "Zell Dincht"
+  },
+  {
+    "id": 13,
+    "question": "Where does most of the story begin in Final Fantasy VIII?",
+    "answers": ["Balamb Garden", "Esthar City", "Dollet", "Timber"],
+    "right_answer": "Balamb Garden"
+  },
+  {
+    "id": 14,
+    "question": "What is the name of Rinoa's resistance group?",
+    "answers": ["Forest Owls", "Timber Wolves", "Balamb Rebels", "Garden Wings"],
+    "right_answer": "Forest Owls"
+  },
+  {
+    "id": 15,
+    "question": "Who is the president of Esthar?",
+    "answers": ["Laguna Loire", "Cid Kramer", "Edea", "Odine"],
+    "right_answer": "Laguna Loire"
+  },
+  {
+    "id": 16,
+    "question": "Which Guardian Force do you get from defeating Ifrit?",
+    "answers": ["Ifrit", "Quezacotl", "Shiva", "Diablos"],
+    "right_answer": "Ifrit"
+  },
+  {
+    "id": 17,
+    "question": "What is the name of the sorceress who becomes the main antagonist?",
+    "answers": ["Ultimecia", "Edea", "Adel", "Rinoa"],
+    "right_answer": "Ultimecia"
+  },
+  {
+    "id": 18,
+    "question": "Which character specializes in using a shotgun-type weapon?",
+    "answers": ["Irvine Kinneas", "Seifer Almasy", "Ward Zabac", "Raijin"],
+    "right_answer": "Irvine Kinneas"
+  },
+  {
+    "id": 19,
+    "question": "What is the name of Squall's ultimate weapon?",
+    "answers": ["Lion Heart", "Revolver", "Punishment", "Shooting Star"],
+    "right_answer": "Lion Heart"
+  },
+  {
+    "id": 20,
+    "question": "What is the name of the city that was sealed off from the rest of the world for years?",
+    "answers": ["Esthar", "Dollet", "Timber", "Deling City"],
+    "right_answer": "Esthar"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Who are the main heroes of Final Fantasy III?",
+    "answers": ["The Four Warriors of Light", "The Crystal Bearers", "The Dawn Warriors", "The SeeD Mercenaries"],
+    "right_answer": "The Four Warriors of Light"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of the starting village in Final Fantasy III?",
+    "answers": ["Ur", "Altair", "Cornelia", "Mysidia"],
+    "right_answer": "Ur"
+  },
+  {
+    "id": 3,
+    "question": "Which character class do all four heroes start as?",
+    "answers": ["Onion Knight", "Freelancer", "Warrior", "Apprentice"],
+    "right_answer": "Onion Knight"
+  },
+  {
+    "id": 4,
+    "question": "What is the main power that grants the heroes their strength?",
+    "answers": ["The Crystals", "The Espers", "The Eidolons", "The Gods of Light"],
+    "right_answer": "The Crystals"
+  },
+  {
+    "id": 5,
+    "question": "Who serves as the main antagonist in Final Fantasy III?",
+    "answers": ["The Cloud of Darkness", "Emperor Mateus", "Zande", "Golbez"],
+    "right_answer": "The Cloud of Darkness"
+  },
+  {
+    "id": 6,
+    "question": "What is the name of the first airship obtained in the game?",
+    "answers": ["The Enterprise", "The Invincible", "The Nautilus", "The Falcon"],
+    "right_answer": "The Enterprise"
+  },
+  {
+    "id": 7,
+    "question": "What unique gameplay system does Final Fantasy III introduce?",
+    "answers": ["Job System", "Limit Breaks", "Materia System", "Esper Fusion"],
+    "right_answer": "Job System"
+  },
+  {
+    "id": 8,
+    "question": "Who is the wizard that opposes the Warriors of Light and serves Xande?",
+    "answers": ["Hein", "Golbez", "Cid", "Garuda"],
+    "right_answer": "Hein"
+  },
+  {
+    "id": 9,
+    "question": "Which powerful bird-like creature can the party summon in battle?",
+    "answers": ["Bahamut", "Phoenix", "Garuda", "Odin"],
+    "right_answer": "Bahamut"
+  },
+  {
+    "id": 10,
+    "question": "Which inventor helps the Warriors of Light and provides airships?",
+    "answers": ["Cid", "Biggs", "Wedge", "Desch"],
+    "right_answer": "Cid"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of the floating continent where the story begins?",
+    "answers": ["The Floating Continent", "Arcadia", "Terra", "Gaia"],
+    "right_answer": "The Floating Continent"
+  },
+  {
+    "id": 12,
+    "question": "Who is the wise old man that guides the heroes early in the story?",
+    "answers": ["Elder Topapa", "King Cecil", "Elder Cid", "Master Tellah"],
+    "right_answer": "Elder Topapa"
+  },
+  {
+    "id": 13,
+    "question": "What class is known for casting both white and black magic?",
+    "answers": ["Red Mage", "Sage", "Scholar", "Time Mage"],
+    "right_answer": "Red Mage"
+  },
+  {
+    "id": 14,
+    "question": "Which job class can call forth powerful creatures?",
+    "answers": ["Evoker", "Summoner", "Caller", "Geomancer"],
+    "right_answer": "Summoner"
+  },
+  {
+    "id": 15,
+    "question": "What is the ultimate job unlocked at the end of the game?",
+    "answers": ["Onion Knight", "Ninja", "Sage", "Dragoon"],
+    "right_answer": "Onion Knight"
+  },
+  {
+    "id": 16,
+    "question": "Which monster guards the Earth Crystal?",
+    "answers": ["Titan", "Medusa", "Goldor", "Echidna"],
+    "right_answer": "Titan"
+  },
+  {
+    "id": 17,
+    "question": "What element is associated with the first Crystal the heroes find?",
+    "answers": ["Wind", "Fire", "Water", "Earth"],
+    "right_answer": "Wind"
+  },
+  {
+    "id": 18,
+    "question": "What creature must be defeated to obtain the Nautilus airship?",
+    "answers": ["Garuda", "Leviathan", "Bahamut", "Odin"],
+    "right_answer": "Garuda"
+  },
+  {
+    "id": 19,
+    "question": "Which job is known for using jump attacks?",
+    "answers": ["Dragoon", "Monk", "Ninja", "Knight"],
+    "right_answer": "Dragoon"
+  },
+  {
+    "id": 20,
+    "question": "What magical force threatens to engulf the world in darkness?",
+    "answers": ["The Void", "The Shadow", "The Nether", "The Abyss"],
+    "right_answer": "The Void"
+  }
+]

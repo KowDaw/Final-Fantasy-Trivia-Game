@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "What is the name of the group of heroes in Final Fantasy I?",
+    "answers": ["Warriors of Light", "Lightbringers", "Heroes of Dawn", "Crystal Guardians"],
+    "right_answer": "Warriors of Light"
+  },
+  {
+    "id": 2,
+    "question": "How many heroes make up the main party in Final Fantasy I?",
+    "answers": ["4", "3", "5", "6"],
+    "right_answer": "4"
+  },
+  {
+    "id": 3,
+    "question": "Which crystals must the Warriors of Light restore?",
+    "answers": ["Earth, Fire, Water, and Wind", "Light, Shadow, Fire, and Ice", "Time, Space, Earth, and Wind", "Fire, Ice, Lightning, and Earth"],
+    "right_answer": "Earth, Fire, Water, and Wind"
+  },
+  {
+    "id": 4,
+    "question": "Who developed and published Final Fantasy I?",
+    "answers": ["Square", "Enix", "Nintendo", "Capcom"],
+    "right_answer": "Square"
+  },
+  {
+    "id": 5,
+    "question": "In what year was Final Fantasy I originally released in Japan?",
+    "answers": ["1987", "1989", "1990", "1985"],
+    "right_answer": "1987"
+  },
+  {
+    "id": 6,
+    "question": "What is the name of the main villain in Final Fantasy I?",
+    "answers": ["Garland", "Chaos", "Astos", "Exdeath"],
+    "right_answer": "Garland"
+  },
+  {
+    "id": 7,
+    "question": "What item revives a fallen party member outside of battle?",
+    "answers": ["Phoenix Down", "Elixir", "Potion", "Ether"],
+    "right_answer": "Phoenix Down"
+  },
+  {
+    "id": 8,
+    "question": "Which class specializes in both black and white magic?",
+    "answers": ["Red Mage", "White Mage", "Black Mage", "Monk"],
+    "right_answer": "Red Mage"
+  },
+  {
+    "id": 9,
+    "question": "What is the first major town visited in Final Fantasy I?",
+    "answers": ["Cornelia", "Pravoka", "Melmond", "Elfheim"],
+    "right_answer": "Cornelia"
+  },
+  {
+    "id": 10,
+    "question": "Which enemy kidnaps Princess Sarah early in the game?",
+    "answers": ["Garland", "Astos", "Chaos", "Lich"],
+    "right_answer": "Garland"
+  },
+  {
+    "id": 11,
+    "question": "What type of weapon does the Warrior primarily use?",
+    "answers": ["Sword", "Staff", "Dagger", "Bow"],
+    "right_answer": "Sword"
+  },
+  {
+    "id": 12,
+    "question": "Which class cannot use any magic spells?",
+    "answers": ["Monk", "Warrior", "Thief", "Knight"],
+    "right_answer": "Monk"
+  },
+  {
+    "id": 13,
+    "question": "What is the name of the pirate leader encountered early in the game?",
+    "answers": ["Bikke", "Cid", "Bart", "Faris"],
+    "right_answer": "Bikke"
+  },
+  {
+    "id": 14,
+    "question": "What element does the Lich Fiend control?",
+    "answers": ["Earth", "Fire", "Water", "Wind"],
+    "right_answer": "Earth"
+  },
+  {
+    "id": 15,
+    "question": "Which magic spell restores health to allies?",
+    "answers": ["Cure", "Fire", "Sleep", "Haste"],
+    "right_answer": "Cure"
+  },
+  {
+    "id": 16,
+    "question": "What kind of creature is the Black Mage known for fighting with magic?",
+    "answers": ["Monsters", "Machines", "Ghosts", "Humans"],
+    "right_answer": "Monsters"
+  },
+  {
+    "id": 17,
+    "question": "What form of transportation allows travel over water?",
+    "answers": ["Ship", "Chocobo", "Airship", "Canoe"],
+    "right_answer": "Ship"
+  },
+  {
+    "id": 18,
+    "question": "What does the 'Ether' item restore?",
+    "answers": ["Magic points", "Health points", "Status effects", "Defense"],
+    "right_answer": "Magic points"
+  },
+  {
+    "id": 19,
+    "question": "What class evolves into a Knight later in the game?",
+    "answers": ["Warrior", "Thief", "Monk", "Red Mage"],
+    "right_answer": "Warrior"
+  },
+  {
+    "id": 20,
+    "question": "What is the name of the ultimate boss form at the end of the game?",
+    "answers": ["Chaos", "Garland", "Astos", "Lich"],
+    "right_answer": "Chaos"
+  }
+]

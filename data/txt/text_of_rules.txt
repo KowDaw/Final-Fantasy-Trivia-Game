@@ -1,0 +1,23 @@
+1. Objective
+The goal of the game is to test players’ knowledge of the Final Fantasy series. Players will answer 20 questions, each with four possible answers, but only one is correct.
+
+2. Game Flow
+The game consists of 20 rounds.
+In each round, the player receives one question and four answer options: A, B, C, D
+The player must select one answer for each question.
+
+3. Scoring
+Correct answer: +1 point
+Incorrect answer: 0 points
+At the end of 20 rounds, the player with the highest score wins.
+
+4. Rules
+Each question has only one correct answer.
+Players cannot change their answer once submitted.
+No external help or devices should be used to answer questions.
+In case of a tie, a tiebreaker question may be asked.
+
+5. Tips
+Read each question carefully before answering.
+Some questions may reference specific games, characters, or story events.
+Enjoy the game and test your Final Fantasy knowledge!

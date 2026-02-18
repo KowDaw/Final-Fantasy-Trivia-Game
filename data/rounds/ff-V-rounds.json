@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the main protagonist of Final Fantasy V?",
+    "answers": ["Bartz Klauser", "Cecil Harvey", "Locke Cole", "Cloud Strife"],
+    "right_answer": "Bartz Klauser"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of Bartz’s loyal chocobo companion?",
+    "answers": ["Boco", "Choco", "Kweh", "Mog"],
+    "right_answer": "Boco"
+  },
+  {
+    "id": 3,
+    "question": "Who is the princess of Tycoon who joins Bartz on his journey?",
+    "answers": ["Lenna", "Faris", "Krile", "Rydia"],
+    "right_answer": "Lenna"
+  },
+  {
+    "id": 4,
+    "question": "Which pirate captain becomes one of the main party members?",
+    "answers": ["Faris", "Cid", "Kain", "Leena"],
+    "right_answer": "Faris"
+  },
+  {
+    "id": 5,
+    "question": "What is the name of the old warrior who joins the group early in the game?",
+    "answers": ["Galuf", "Tellah", "Yang", "Cid"],
+    "right_answer": "Galuf"
+  },
+  {
+    "id": 6,
+    "question": "What unique gameplay system does Final Fantasy V focus on?",
+    "answers": ["Job System", "Materia System", "Esper System", "Sphere Grid"],
+    "right_answer": "Job System"
+  },
+  {
+    "id": 7,
+    "question": "What are the elemental powers that the heroes seek to protect?",
+    "answers": ["Crystals", "Orbs", "Runes", "Totems"],
+    "right_answer": "Crystals"
+  },
+  {
+    "id": 8,
+    "question": "Who serves as the main antagonist in Final Fantasy V?",
+    "answers": ["Exdeath", "Golbez", "Kefka", "Zande"],
+    "right_answer": "Exdeath"
+  },
+  {
+    "id": 9,
+    "question": "What is the name of the world where Bartz begins his journey?",
+    "answers": ["The First World", "The Void", "Tycoon", "Bal"],
+    "right_answer": "The First World"
+  },
+  {
+    "id": 10,
+    "question": "Which creature serves as a recurring summon and trial boss in the game?",
+    "answers": ["Bahamut", "Leviathan", "Shiva", "Odin"],
+    "right_answer": "Bahamut"
+  },
+  {
+    "id": 11,
+    "question": "Who is Krile’s grandfather?",
+    "answers": ["Galuf", "Cid", "Kelger", "Dorgann"],
+    "right_answer": "Galuf"
+  },
+  {
+    "id": 12,
+    "question": "What is the name of the ancient evil sealed within the Void?",
+    "answers": ["Exdeath", "Neo Exdeath", "Omega", "Enuo"],
+    "right_answer": "Exdeath"
+  },
+  {
+    "id": 13,
+    "question": "Which job class can use powerful sword magic?",
+    "answers": ["Mystic Knight", "Blue Mage", "Red Mage", "Samurai"],
+    "right_answer": "Mystic Knight"
+  },
+  {
+    "id": 14,
+    "question": "What is the name of the engineer who helps repair airships?",
+    "answers": ["Cid", "Mid", "Biggs", "Wedge"],
+    "right_answer": "Cid"
+  },
+  {
+    "id": 15,
+    "question": "Who is Cid’s grandson and assistant inventor?",
+    "answers": ["Mid", "Krile", "Faris", "Dorgann"],
+    "right_answer": "Mid"
+  },
+  {
+    "id": 16,
+    "question": "Which summon creature is found inside a waterfall cave?",
+    "answers": ["Syldra", "Ifrit", "Titan", "Carbuncle"],
+    "right_answer": "Syldra"
+  },
+  {
+    "id": 17,
+    "question": "Which weapon type is exclusive to the Samurai job?",
+    "answers": ["Katana", "Spear", "Axe", "Rod"],
+    "right_answer": "Katana"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of Bartz’s father?",
+    "answers": ["Dorgann", "Kelger", "Cid", "Exdeath"],
+    "right_answer": "Dorgann"
+  },
+  {
+    "id": 19,
+    "question": "Which optional boss is known for being one of the strongest mechanical enemies?",
+    "answers": ["Omega", "Shinryu", "Bahamut", "Titan"],
+    "right_answer": "Omega"
+  },
+  {
+    "id": 20,
+    "question": "What is the ultimate threat that Exdeath tries to unleash?",
+    "answers": ["The Void", "Meteor", "Time Compression", "Darkness Eternal"],
+    "right_answer": "The Void"
+  }
+]
