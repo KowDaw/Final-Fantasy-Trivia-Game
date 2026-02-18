@@ -140,3 +140,4 @@ class GameScreen(Screen):
             self.after(1500, self.display_hud)
         else:
             print("game over")
+            self.master.destroy()
