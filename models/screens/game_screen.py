@@ -24,7 +24,6 @@ class GameScreen(Screen):
                 "position": (1320, 600)
             }
         ]
-        self.title_of_chosen_final_fantasy = title_of_chosen_final_fantasy
         self.number_of_current_round = 1
         self.current_round = None
 
