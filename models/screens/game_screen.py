@@ -3,9 +3,9 @@ from random import shuffle
 import json
 
 class GameScreen(Screen):
-    def __init__(self, master, title_of_choosen_final_fantasy):
+    def __init__(self, master, title_of_chosen_final_fantasy):
         super().__init__(master)
-        self.ROUNDS_IN_RANDOM_ORDER = self.get_rounds_with_random_order(title_of_choosen_final_fantasy)
+        self.ROUNDS_IN_RANDOM_ORDER = self.get_rounds_with_random_order(title_of_chosen_final_fantasy)
         self.LETTERS_OF_ANSWERS = [
             {
                 "letter": "A",
@@ -24,7 +24,7 @@ class GameScreen(Screen):
                 "position": (1320, 600)
             }
         ]
-        self.title_of_choosen_final_fantasy = title_of_choosen_final_fantasy
+        self.title_of_chosen_final_fantasy = title_of_chosen_final_fantasy
         self.number_of_current_round = 1
         self.current_round = None
 
@@ -33,8 +33,8 @@ class GameScreen(Screen):
         self.display_hud()
         self.display_back_button("final_fantasy_selector_screen")
 
-    def get_rounds_from_json_file(self, title_of_choosen_final_fantasy):
-        roman_numeral = title_of_choosen_final_fantasy.split(" ")[-1]
+    def get_rounds_from_json_file(self, title_of_chosen_final_fantasy):
+        roman_numeral = title_of_chosen_final_fantasy.split(" ")[-1]
         file_path = f"data/rounds/ff-{roman_numeral}-rounds.json"
         
         try:
@@ -50,8 +50,8 @@ class GameScreen(Screen):
             print(f"Invalid JSON format in: {file_path}")
             return []
     
-    def get_rounds_with_random_order(self, title_of_choosen_final_fantasy):
-        rounds = self.get_rounds_from_json_file(title_of_choosen_final_fantasy)
+    def get_rounds_with_random_order(self, title_of_chosen_final_fantasy):
+        rounds = self.get_rounds_from_json_file(title_of_chosen_final_fantasy)
         copy_of_rounds = rounds.copy()
         shuffle(copy_of_rounds)
 
@@ -60,9 +60,9 @@ class GameScreen(Screen):
 
         return copy_of_rounds
 
-    def get_game_screen_name_with_roman_numeral(title_of_choosen_final_fantasy):
+    def get_game_screen_name_with_roman_numeral(title_of_chosen_final_fantasy):
         # example: "game_screen_I"
-        roman_numeral = title_of_choosen_final_fantasy.split(" ")[-1]
+        roman_numeral = title_of_chosen_final_fantasy.split(" ")[-1]
         return f"game_screen_{roman_numeral}"
 
     def display_hud(self):

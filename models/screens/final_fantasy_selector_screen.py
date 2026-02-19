@@ -51,11 +51,11 @@ class FinalFantasySelectorScreen(Screen):
             self.canvas.tag_bind(
                 new_item, "<Button-1>",
                 lambda e,
-                title=game_title: self.start_game_with_choosen_final_fantasy(title)
+                title=game_title: self.start_game_with_chosen_final_fantasy(title)
             )
 
             y += 75
 
-    def start_game_with_choosen_final_fantasy(self, title_of_choosen_final_fantasy):
+    def start_game_with_chosen_final_fantasy(self, title_of_chosen_final_fantasy):
         self.master.player_score = 0
-        self.show_confirmation_dialog(title_of_choosen_final_fantasy)
+        self.show_confirmation_dialog(title_of_chosen_final_fantasy)
