@@ -1,4 +1,4 @@
-from tkinter import Frame, Canvas, Button
+from tkinter import Frame, Canvas, Button, Toplevel, Label
 from PIL import Image, ImageTk
 
 class Screen(Frame):
@@ -8,6 +8,8 @@ class Screen(Frame):
         self.OPTION_FONT = ("Arial", 60, "bold")
         self.TEXT_COLOR = "#ff4400"
         self.HOVER_COLOR = "#00ffff"
+        self.MODAL_COLOR = "#1a1a2e"
+        self.MODAL_COLOR_LIGHT = "#333399"
         self.canvas = Canvas(self, bg="black", highlightthickness=0, bd=0)
 
         # callings
@@ -37,6 +39,84 @@ class Screen(Frame):
     def handle_hover(self, item, should_hover=False):
         appropirate_color = self.HOVER_COLOR if should_hover else self.TEXT_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)
+
+    def show_confirmation_dialog(self, title=None, is_win=False):
+        # Create modal
+        modal_title = ""
+
+        if is_win:
+            modal_title = "Congratultaions"
+        elif title is None:
+            modal_title = "Game Over"
+        else:
+            modal_title = "Confirmation"
+
+        dialog = Toplevel(self.master)
+        dialog.title(modal_title)
+        dialog_width = 500
+        dialog_height = 300
+
+        # Update the size of the master
+        screen_width = dialog.winfo_screenwidth()
+        screen_height = dialog.winfo_screenheight()
+
+        x = (screen_width // 2) - (dialog_width // 2)
+        y = (screen_height // 2) - (dialog_height // 2)
+
+        dialog.geometry(f"{dialog_width}x{dialog_height}+{x}+{y}")
+
+        dialog.configure(bg=self.MODAL_COLOR)
+        dialog.resizable(False, False)
+
+        # Modal behavior
+        dialog.transient(self.master)
+        dialog.grab_set()
+
+        # Text
+        current_text = f"Wrong answer!\nGame over!\nScore: {self.master.player_score}" if title is None else f"Start quiz from:\n{title}?"
+        label = Label(
+            dialog,
+            text=current_text,
+            fg="white",
+            bg=self.MODAL_COLOR,
+            font=("Arial", 30)
+        )
+        label.pack(pady=40)
+
+        # Button frame
+        button_frame = Frame(dialog, bg=self.MODAL_COLOR)
+        button_frame.pack(pady=20)
+
+        if title is None:
+            ok_button = Button(
+                button_frame,
+                text="Ok",
+                width=20,
+                command=lambda: self.confirm_dialog(dialog, "main_menu_screen", title),
+                bg=self.MODAL_COLOR,
+                fg="white"
+            )
+            ok_button.pack(padx=20)
+        else:
+            start_button = Button(
+                button_frame,
+                text="Start",
+                width=20,
+                command=lambda: self.confirm_dialog(dialog, "game_screen", title),
+                bg=self.MODAL_COLOR,
+                fg="white"
+            )
+            start_button.pack(side="left", padx=20)
+
+            cancel_button = Button(
+                button_frame,
+                text="Cancel",
+                width=20,
+                command=lambda: self.cancel_dialog(dialog),
+                bg=self.MODAL_COLOR,
+                fg="white"
+            )
+            cancel_button.pack(side="right", padx=20)
 
     def confirm_dialog(self, dialog, screen_to_go, title):
         dialog.destroy()

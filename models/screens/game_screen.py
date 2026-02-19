@@ -70,8 +70,9 @@ class GameScreen(Screen):
         self.canvas.delete("hud")
 
         # check the number of current round
-        if self.number_of_current_round >= len(self.ROUNDS_IN_RANDOM_ORDER):
+        if self.number_of_current_round >= len(self.ROUNDS_IN_RANDOM_ORDER) + 1:
             print("game over")
+            self.show_confirmation_dialog(is_win=True)
             return
 
         self.current_round = self.ROUNDS_IN_RANDOM_ORDER[self.number_of_current_round - 1]
@@ -107,7 +108,7 @@ class GameScreen(Screen):
             # Background rectangle
             rect = self.canvas.create_rectangle(
                 x-250, y-40, x+250, y+40,
-                fill="#1a1a3d",
+                fill=self.MODAL_COLOR,
                 outline="gold",
                 width=3,
                 tags="hud"
@@ -124,10 +125,10 @@ class GameScreen(Screen):
             )
 
             # Hover effect
-            self.canvas.tag_bind(rect, "<Enter>", lambda e, r=rect: self.canvas.itemconfig(r, fill="#333399"))
-            self.canvas.tag_bind(rect, "<Leave>", lambda e, r=rect: self.canvas.itemconfig(r, fill="#1a1a3d"))
-            self.canvas.tag_bind(text, "<Enter>", lambda e, r=rect: self.canvas.itemconfig(r, fill="#333399"))
-            self.canvas.tag_bind(text, "<Leave>", lambda e, r=rect: self.canvas.itemconfig(r, fill="#1a1a3d"))
+            self.canvas.tag_bind(rect, "<Enter>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT))
+            self.canvas.tag_bind(rect, "<Leave>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR))
+            self.canvas.tag_bind(text, "<Enter>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT))
+            self.canvas.tag_bind(text, "<Leave>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR))
 
             # Handle clicks
             self.canvas.tag_bind(rect, "<Button-1>", lambda e, ans=answer: self.check_answer(ans))
@@ -139,5 +140,4 @@ class GameScreen(Screen):
             self.number_of_current_round += 1
             self.after(1500, self.display_hud)
         else:
-            print("game over")
-            self.master.destroy()
+            self.show_confirmation_dialog()

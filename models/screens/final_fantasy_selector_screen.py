@@ -1,5 +1,4 @@
 from models.screens.screen import Screen
-from tkinter import Toplevel, Frame, Button, Label
 
 class FinalFantasySelectorScreen(Screen):
     def __init__(self, master):
@@ -57,61 +56,6 @@ class FinalFantasySelectorScreen(Screen):
 
             y += 75
 
-    def start_game_with_choosen_final_fantasy(self, title, event=None):
-        self.show_confirmation_dialog(title)
-
-    def show_confirmation_dialog(self, title):
-        dialog = Toplevel(self.master)
-        dialog.title("Confirm")
-        dialog_width = 500
-        dialog_height = 300
-
-        # Update the size of the master
-        screen_width = dialog.winfo_screenwidth()
-        screen_height = dialog.winfo_screenheight()
-
-        x = (screen_width // 2) - (dialog_width // 2)
-        y = (screen_height // 2) - (dialog_height // 2)
-
-        dialog.geometry(f"{dialog_width}x{dialog_height}+{x}+{y}")
-
-        dialog.configure(bg="#1a1a2e")
-        dialog.resizable(False, False)
-
-        # Modal behavior
-        dialog.transient(self.master)
-        dialog.grab_set()
-
-        # Text
-        label = Label(
-            dialog,
-            text=f"Start quiz from:\n\n{title}?",
-            fg="white",
-            bg="#1a1a2e",
-            font=("Arial", 30)
-        )
-        label.pack(pady=40)
-
-        # Button frame
-        button_frame = Frame(dialog, bg="#1a1a2e")
-        button_frame.pack(pady=20)
-
-        ok_button = Button(
-            button_frame,
-            text="Start",
-            width=20,
-            command=lambda: self.confirm_dialog(dialog, "game_screen", title),
-            bg="#16213e",
-            fg="white"
-        )
-        ok_button.pack(side="left", padx=20)
-
-        cancel_button = Button(
-            button_frame,
-            text="Cancel",
-            width=20,
-            command=lambda: self.cancel_dialog(dialog),
-            bg="#16213e",
-            fg="white"
-        )
-        cancel_button.pack(side="right", padx=20)
+    def start_game_with_choosen_final_fantasy(self, title_of_choosen_final_fantasy):
+        self.master.player_score = 0
+        self.show_confirmation_dialog(title_of_choosen_final_fantasy)
