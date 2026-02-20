@@ -70,7 +70,6 @@ class GameScreen(Screen):
 
         # check the number of current round
         if self.number_of_current_round >= len(self.ROUNDS_IN_RANDOM_ORDER) + 1:
-            print("game over")
             self.show_confirmation_dialog(is_win=True)
             return
 
