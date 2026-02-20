@@ -40,9 +40,9 @@ class Screen(Frame):
         appropirate_color = self.HOVER_COLOR if should_hover else self.TEXT_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)
 
-    def show_confirmation_dialog(self, title=None, is_win=False):
+    def show_confirmation_dialog(self, was_it_random, title=None, is_win=False):
         # Create modal
-        modal_title, label_text = self.create_messages_of_dialog(is_win, title)
+        modal_title, label_text = self.create_messages_of_dialog(was_it_random, is_win, title)
 
         dialog = Toplevel(self.master)
         dialog.title(modal_title)
@@ -110,7 +110,7 @@ class Screen(Frame):
             )
             cancel_button.pack(side="right", padx=20)
 
-    def create_messages_of_dialog(self, is_win, title=None):
+    def create_messages_of_dialog(self, was_it_random, is_win, title=None):
         modal_title = ""
         label_text = ""
 
@@ -122,7 +122,7 @@ class Screen(Frame):
             label_text = f"Wrong answer!\nGame over!\nScore: {self.master.player_score}"
         else:
             modal_title = "Confirmation"
-            label_text = f"Start quiz from:\n{title}?"
+            label_text = f"Start quiz from:\n{"Random Final Fantasy" if was_it_random else title}?"
 
         return (modal_title, label_text)
 

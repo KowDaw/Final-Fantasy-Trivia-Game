@@ -24,6 +24,7 @@ class GameScreen(Screen):
                 "position": (1320, 600)
             }
         ]
+        self.title_of_chosen_final_fantasy = title_of_chosen_final_fantasy
         self.number_of_current_round = 1
         self.current_round = None
 
@@ -76,6 +77,16 @@ class GameScreen(Screen):
         self.current_round = self.ROUNDS_IN_RANDOM_ORDER[self.number_of_current_round - 1]
 
         # ====== Number of Round ======
+        self.canvas.create_text(
+            960,
+            100,
+            text=self.title_of_chosen_final_fantasy,
+            fill="white",
+            font=("Arial", 32, "bold"),
+            width=1400,
+            tags="hud"
+        )
+
         self.canvas.create_text(
             960,
             200,

@@ -1,4 +1,5 @@
 from models.screens.screen import Screen
+from random import choice
 
 class FinalFantasySelectorScreen(Screen):
     def __init__(self, master):
@@ -13,7 +14,8 @@ class FinalFantasySelectorScreen(Screen):
             "Final Fantasy VII",
             "Final Fantasy VIII",
             "Final Fantasy IX",
-            "Final Fantasy X"
+            "Final Fantasy X",
+            "Random Final Fantasy"
         ]
         self.title = "Choose a Final Fantasy:"
         self.final_fantasy_menu_items = []
@@ -54,8 +56,14 @@ class FinalFantasySelectorScreen(Screen):
                 title=game_title: self.start_game_with_chosen_final_fantasy(title)
             )
 
-            y += 75
+            y += 70
 
     def start_game_with_chosen_final_fantasy(self, title_of_chosen_final_fantasy):
+        was_it_random = False
+
+        if title_of_chosen_final_fantasy == "Random Final Fantasy":
+            was_it_random = True
+            title_of_chosen_final_fantasy = choice(self.TITLES_OF_FINAL_FANTASY_GAMES[0:-1])
+
         self.master.player_score = 0
-        self.show_confirmation_dialog(title_of_chosen_final_fantasy)
+        self.show_confirmation_dialog(was_it_random, title_of_chosen_final_fantasy)
