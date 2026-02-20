@@ -42,18 +42,11 @@ class Screen(Frame):
 
     def show_confirmation_dialog(self, title=None, is_win=False):
         # Create modal
-        modal_title = ""
-
-        if is_win:
-            modal_title = "Congratultaions"
-        elif title is None:
-            modal_title = "Game Over"
-        else:
-            modal_title = "Confirmation"
+        modal_title, label_text = self.create_messages_of_dialog(is_win, title)
 
         dialog = Toplevel(self.master)
         dialog.title(modal_title)
-        dialog_width = 500
+        dialog_width = 700
         dialog_height = 300
 
         # Update the size of the master
@@ -73,10 +66,9 @@ class Screen(Frame):
         dialog.grab_set()
 
         # Text
-        current_text = f"Wrong answer!\nGame over!\nScore: {self.master.player_score}" if title is None else f"Start quiz from:\n{title}?"
         label = Label(
             dialog,
-            text=current_text,
+            text=label_text,
             fg="white",
             bg=self.MODAL_COLOR,
             font=("Arial", 30)
@@ -117,6 +109,22 @@ class Screen(Frame):
                 fg="white"
             )
             cancel_button.pack(side="right", padx=20)
+
+    def create_messages_of_dialog(self, is_win, title=None):
+        modal_title = ""
+        label_text = ""
+
+        if is_win:
+            modal_title = "Congratultaions"
+            label_text = f"Congratulations!\nYou answered all of the questions!\nScore: {self.master.player_score}"
+        elif title is None:
+            modal_title = "Game Over"
+            label_text = f"Wrong answer!\nGame over!\nScore: {self.master.player_score}"
+        else:
+            modal_title = "Confirmation"
+            label_text = f"Start quiz from:\n{title}?"
+
+        return (modal_title, label_text)
 
     def confirm_dialog(self, dialog, screen_to_go, title):
         dialog.destroy()
