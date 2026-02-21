@@ -48,3 +48,6 @@ class MainApp(Tk):
             self.current_screen = screen_class(self)
 
         self.current_screen.pack(fill="both", expand=True)
+
+    def increase_player_score_by_one(self):
+        self.player_score += 1

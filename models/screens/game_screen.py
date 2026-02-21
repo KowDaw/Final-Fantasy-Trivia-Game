@@ -145,7 +145,7 @@ class GameScreen(Screen):
 
     def check_answer(self, selected_answer):
         if selected_answer == self.current_round["right_answer"]:
-            self.master.player_score += 1
+            self.master.increase_player_score_by_one()
             self.number_of_current_round += 1
             self.after(1500, self.display_hud)
         else:
