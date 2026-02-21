@@ -1,21 +1,21 @@
 from models.screens.screen import Screen
 
 class MainMenuScreen(Screen):
-    def __init__(self, master): # master = MainApp()
+    def __init__(self, master):
         super().__init__(master)
         self.title = "Final Fantasy Trivia"
         self.options = [
             {
                 "name": "Start Game",
-                "function": self.go_to_final_fantasy_selector
+                "function": lambda e: self.go_to_screen("final_fantasy_selector_screen")
             },
             {
                 "name": "Options",
-                "function": self.go_to_options
+                "function": lambda e: self.go_to_screen("options_screen")
             },
             {
                 "name": "Rules",
-                "function": self.go_to_rules
+                "function": lambda e: self.go_to_screen("rules_screen")
             },
             {
                 "name": "Exit",
@@ -51,14 +51,8 @@ class MainMenuScreen(Screen):
 
             y += 120
 
-    def go_to_final_fantasy_selector(self, event=None):
-        self.master.load_screen("final_fantasy_selector_screen")
-
-    def go_to_options(self, event=None):
-        self.master.load_screen("options_screen")
-
-    def go_to_rules(self, event=None):
-        self.master.load_screen("rules_screen")
+    def go_to_screen(self, screen, event=None):
+        self.master.load_screen(screen)
 
     def exit_program(self, event=None):
         self.master.destroy()
