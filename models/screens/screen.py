@@ -1,15 +1,22 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
 from tkinter import Frame, Canvas, Button, Toplevel, Label
 from PIL import Image, ImageTk
 
+if TYPE_CHECKING:
+    from app.app import MainApp
+
 class Screen(Frame):
-    def __init__(self, master):
+    def __init__(self, master: MainApp):
         super().__init__(master)
         self.TITLE_FONT = ("Arial", 120, "bold")
         self.OPTION_FONT = ("Arial", 60, "bold")
         self.TEXT_COLOR = "#ff4400"
         self.HOVER_COLOR = "#00ffff"
+        self.BUTTON_COLOR = "#5252A0"
         self.MODAL_COLOR = "#1a1a2e"
         self.MODAL_COLOR_LIGHT = "#333399"
+        self.master: MainApp = master
         self.canvas = Canvas(self, bg="black", highlightthickness=0, bd=0)
 
         # callings
@@ -40,9 +47,9 @@ class Screen(Frame):
         appropirate_color = self.HOVER_COLOR if should_hover else self.TEXT_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)
 
-    def show_confirmation_dialog(self, was_it_random, title=None, is_win=False):
+    def show_confirmation_dialog(self, was_it_random=None, title=None, is_win=False):
         # Create modal
-        modal_title, label_text = self.create_messages_of_dialog(was_it_random, is_win, title)
+        modal_title, label_text = self.create_messages_of_dialog(is_win, was_it_random, title)
 
         dialog = Toplevel(self.master)
         dialog.title(modal_title)
@@ -85,7 +92,7 @@ class Screen(Frame):
                 text="Ok",
                 width=20,
                 command=lambda: self.confirm_dialog(dialog, "main_menu_screen", title),
-                bg=self.MODAL_COLOR,
+                bg=self.BUTTON_COLOR,
                 fg="white"
             )
             ok_button.pack(padx=20)
@@ -95,7 +102,7 @@ class Screen(Frame):
                 text="Start",
                 width=20,
                 command=lambda: self.confirm_dialog(dialog, "game_screen", title),
-                bg=self.MODAL_COLOR,
+                bg=self.BUTTON_COLOR,
                 fg="white"
             )
             start_button.pack(side="left", padx=20)
@@ -105,12 +112,12 @@ class Screen(Frame):
                 text="Cancel",
                 width=20,
                 command=lambda: self.cancel_dialog(dialog),
-                bg=self.MODAL_COLOR,
+                bg=self.BUTTON_COLOR,
                 fg="white"
             )
             cancel_button.pack(side="right", padx=20)
 
-    def create_messages_of_dialog(self, was_it_random, is_win, title=None):
+    def create_messages_of_dialog(self, is_win, was_it_random=None, title=None):
         modal_title = ""
         label_text = ""
 
