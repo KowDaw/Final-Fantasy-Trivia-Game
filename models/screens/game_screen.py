@@ -1,4 +1,5 @@
 from models.screens.screen import Screen
+from models.rounds.round import Round
 from random import shuffle
 import json
 
@@ -35,7 +36,7 @@ class GameScreen(Screen):
 
     def get_rounds_from_json_file(self, title_of_chosen_final_fantasy):
         roman_numeral = title_of_chosen_final_fantasy.split(" ")[-1]
-        file_path = f"data/rounds/ff-{roman_numeral}-rounds.json"
+        file_path = f"data/rounds_data/ff-{roman_numeral}-rounds.json"
         
         try:
             with open(file_path, "r", encoding="utf-8") as file:
@@ -52,13 +53,13 @@ class GameScreen(Screen):
     
     def get_rounds_with_random_order(self, title_of_chosen_final_fantasy):
         rounds = self.get_rounds_from_json_file(title_of_chosen_final_fantasy)
-        copy_of_rounds = rounds.copy()
-        shuffle(copy_of_rounds)
+        round_classes = [Round(round_data) for round_data in rounds]
+        shuffle(round_classes)
 
-        for round in copy_of_rounds:
-            shuffle(round["answers"])
+        for round_class in round_classes:
+            shuffle(round_class.answers)
 
-        return copy_of_rounds
+        return round_classes
 
     def get_game_screen_name_with_roman_numeral(title_of_chosen_final_fantasy):
         # example: "game_screen_I"
@@ -101,7 +102,7 @@ class GameScreen(Screen):
         self.canvas.create_text(
             960,
             300,
-            text=self.current_round["question"],
+            text=self.current_round.question,
             fill="white",
             font=("Arial", 32, "bold"),
             width=1400,
@@ -109,10 +110,10 @@ class GameScreen(Screen):
         )
 
         # ====== Answers in 2x2 Grid ======
-        for i in range(len(self.current_round["answers"])):
+        for i in range(len(self.current_round.answers)):
             letter = self.LETTERS_OF_ANSWERS[i]["letter"]
             x, y = self.LETTERS_OF_ANSWERS[i]["position"]
-            answer = self.current_round["answers"][i]
+            answer = self.current_round.answers[i]
 
             # Background rectangle
             rect = self.canvas.create_rectangle(
@@ -144,7 +145,7 @@ class GameScreen(Screen):
             self.canvas.tag_bind(text, "<Button-1>", lambda e, ans=answer: self.check_answer(ans))
 
     def check_answer(self, selected_answer):
-        if selected_answer == self.current_round["right_answer"]:
+        if selected_answer == self.current_round.right_answer:
             self.master.increase_player_score_by_one()
             self.number_of_current_round += 1
             self.after(1500, self.display_hud)
