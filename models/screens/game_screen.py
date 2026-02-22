@@ -5,6 +5,7 @@ class GameScreen(Screen):
     def __init__(self, master, title_of_chosen_final_fantasy):
         super().__init__(master)
         self.QUIZ_BRAIN = QuizBrain(title_of_chosen_final_fantasy)
+        self.answer_hover_locked = False
 
         # callings
         self.display_background_image("assets/images/ff-VII-game_screen_background.png")
@@ -14,6 +15,7 @@ class GameScreen(Screen):
     def display_hud(self):
         # delete the previous state
         self.canvas.delete("hud")
+        self.answer_hover_locked = False
 
         # check the number of current round
         if not self.QUIZ_BRAIN.has_more_rounds():
@@ -99,19 +101,33 @@ class GameScreen(Screen):
             )
 
             # Hover effect
-            self.canvas.tag_bind(rect, "<Enter>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT))
-            self.canvas.tag_bind(rect, "<Leave>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR))
-            self.canvas.tag_bind(text, "<Enter>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT))
-            self.canvas.tag_bind(text, "<Leave>", lambda e, r=rect: self.canvas.itemconfig(r, fill=self.MODAL_COLOR))
+            self.canvas.tag_bind(
+                rect,
+                "<Enter>",
+                lambda e, r=rect: None if self.answer_hover_locked else self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT)
+            )
+
+            self.canvas.tag_bind(
+                rect,
+                "<Leave>",
+                lambda e, r=rect: None if self.answer_hover_locked else self.canvas.itemconfig(r, fill=self.MODAL_COLOR)
+)
 
             # Handle clicks
-            self.canvas.tag_bind(rect, "<Button-1>", lambda e, ans=answer: self.press_answer(ans))
-            self.canvas.tag_bind(text, "<Button-1>", lambda e, ans=answer: self.press_answer(ans))
+            self.canvas.tag_bind(rect, "<Button-1>", lambda e, ans=answer, r=rect: self.press_answer(ans, r))
+            self.canvas.tag_bind(text, "<Button-1>", lambda e, ans=answer, r=rect: self.press_answer(ans, r))
 
-    def press_answer(self, selected_answer):
+    def set_color_of_canvas(self, color, rect_id):
+        self.canvas.itemconfig(rect_id, fill=color)
+
+    def press_answer(self, selected_answer, rect_id):
+        self.answer_hover_locked = True
+
         if self.QUIZ_BRAIN.is_selected_answer_right(selected_answer):
+            self.set_color_of_canvas("green", rect_id)
             self.QUIZ_BRAIN.increase_number_of_current_round_by_one()
             self.master.increase_player_score_by_one()
             self.after(1500, self.display_hud)
         else:
-            self.show_confirmation_dialog()
+            self.set_color_of_canvas("red", rect_id)
+            self.after(1500, self.show_confirmation_dialog)
