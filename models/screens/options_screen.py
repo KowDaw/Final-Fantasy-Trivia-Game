@@ -3,7 +3,6 @@ from models.screens.screen import Screen
 class OptionsScreen(Screen):
     def __init__(self, master):
         super().__init__(master)
-        self.title = "Options:"
 
         # callings
         self.display_background_image("assets/images/midgar-wallpaper.png")
@@ -14,7 +13,7 @@ class OptionsScreen(Screen):
         self.canvas.create_text(
             960,
             100,
-            text=self.title,
+            text="Options",
             fill="white",
             font=self.TITLE_FONT
         )

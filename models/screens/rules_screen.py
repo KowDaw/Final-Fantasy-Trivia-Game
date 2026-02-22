@@ -3,7 +3,6 @@ from models.screens.screen import Screen
 class RulesScreen(Screen):
     def __init__(self, master):
         super().__init__(master)
-        self.title = "Rules:"
         self.text_of_rules = self.get_text_of_rules("data/txt/text_of_rules.txt")
 
         # callings
@@ -21,7 +20,7 @@ class RulesScreen(Screen):
         self.canvas.create_text(
             960,
             100,
-            text=self.title,
+            text="Rules",
             fill="white",
             font=self.TITLE_FONT
         )
