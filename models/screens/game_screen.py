@@ -5,7 +5,7 @@ class GameScreen(Screen):
     def __init__(self, master, title_of_chosen_final_fantasy):
         super().__init__(master)
         self.QUIZ_BRAIN = QuizBrain(title_of_chosen_final_fantasy)
-        self.answer_hover_locked = False
+        self.is_answer_hover_allowed = True
 
         # callings
         self.display_background_image("assets/images/ff-VII-game_screen_background.png")
@@ -15,7 +15,7 @@ class GameScreen(Screen):
     def display_hud(self):
         # delete the previous state
         self.canvas.delete("hud")
-        self.answer_hover_locked = False
+        self.is_answer_hover_allowed = True
 
         # check the number of current round
         if not self.QUIZ_BRAIN.has_more_rounds():
@@ -104,13 +104,13 @@ class GameScreen(Screen):
             self.canvas.tag_bind(
                 rect,
                 "<Enter>",
-                lambda e, r=rect: None if self.answer_hover_locked else self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT)
+                lambda e, r=rect: None if not self.is_answer_hover_allowed else self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT)
             )
 
             self.canvas.tag_bind(
                 rect,
                 "<Leave>",
-                lambda e, r=rect: None if self.answer_hover_locked else self.canvas.itemconfig(r, fill=self.MODAL_COLOR)
+                lambda e, r=rect: None if not self.is_answer_hover_allowed else self.canvas.itemconfig(r, fill=self.MODAL_COLOR)
 )
 
             # Handle clicks
@@ -121,7 +121,7 @@ class GameScreen(Screen):
         self.canvas.itemconfig(rect_id, fill=color)
 
     def press_answer(self, selected_answer, rect_id):
-        self.answer_hover_locked = True
+        self.is_answer_hover_allowed = False
 
         if self.QUIZ_BRAIN.is_selected_answer_right(selected_answer):
             self.set_color_of_canvas("green", rect_id)
