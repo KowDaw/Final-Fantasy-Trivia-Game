@@ -10,10 +10,4 @@ class OptionsScreen(Screen):
         self.display_back_button("main_menu_screen")
 
     def display_options(self):
-        self.canvas.create_text(
-            960,
-            100,
-            text="Options",
-            fill="white",
-            font=self.TITLE_FONT
-        )
+        self.create_rectangle_with_text(1400, 160, 960, 100, self.TITLE_FONT, "Options")

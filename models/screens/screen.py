@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import TYPE_CHECKING
 from tkinter import Frame, Canvas, Button, Toplevel, Label
 from PIL import Image, ImageTk
@@ -9,13 +8,11 @@ if TYPE_CHECKING:
 class Screen(Frame):
     def __init__(self, master: MainApp):
         super().__init__(master)
-        self.TITLE_FONT = ("Arial", 120, "bold")
-        self.OPTION_FONT = ("Arial", 60, "bold")
-        self.TEXT_COLOR = "#ff4400"
-        self.HOVER_COLOR = "#00ffff"
+        self.TITLE_FONT = ("Arial", 80, "bold")
+        self.OPTION_FONT = ("Arial", 40, "bold")
         self.BUTTON_COLOR = "#5252A0"
-        self.MODAL_COLOR = "#1a1a2e"
-        self.MODAL_COLOR_LIGHT = "#333399"
+        self.MODAL_COLOR = "#17172A"
+        self.MODAL_COLOR_LIGHT = "#353579"
         self.MODAL_BORDER_COLOR = "#FFC400"
         self.RIGTH_ANSWER_MODAL_COLOR = "#009B0A"
         self.WRONG_ANSWER_MODAL_COLOR = "#9B0000"
@@ -46,7 +43,7 @@ class Screen(Frame):
 
         self.canvas.create_window(1800, 1000, window=back_button)
 
-    def create_rectangle_with_text(self, box_width, box_height, x_center, y_center, font, text):
+    def create_rectangle_with_text(self, box_width, box_height, x_center, y_center, font, text, justify=None):
         x1 = x_center - box_width // 2
         y1 = y_center - box_height // 2
         x2 = x_center + box_width // 2
@@ -66,6 +63,7 @@ class Screen(Frame):
             text=text,
             fill="white",
             font=font,
+            justify=justify,
             width=box_width - 20,  # padding
             tags="hud"
         )
@@ -73,7 +71,7 @@ class Screen(Frame):
         return (rectangele_id, text_id)
 
     def handle_hover(self, item, should_hover=False):
-        appropirate_color = self.HOVER_COLOR if should_hover else self.TEXT_COLOR
+        appropirate_color = self.MODAL_COLOR_LIGHT if should_hover else self.MODAL_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)
 
     def show_confirmation_dialog(self, was_it_random=None, title=None, is_win=False):

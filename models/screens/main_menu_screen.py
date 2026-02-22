@@ -21,34 +21,29 @@ class MainMenuScreen(Screen):
                 "function": self.exit_program
             }
         ]
-        self.menu_items = []
 
         # callings
         self.display_background_image("assets/images/midgar-wallpaper.png")
         self.display_main_menu()
 
     def display_main_menu(self):
-        x = 960
-        y = 600
-
-        self.canvas.create_text(x, 100, text="Final Fantasy Trivia", fill="white", font=self.TITLE_FONT)
+        self.create_rectangle_with_text(1400, 160, 960, 100, self.TITLE_FONT, "Final Fantasy Trivia")
+        y_of_menu_options = 500
 
         for option in self.OPTIONS:
-            new_item = self.canvas.create_text(
-                x,
-                y,
-                text=option["name"],
-                fill=self.TEXT_COLOR,
-                font=self.OPTION_FONT
+            (option_rectangle, option_text) = self.create_rectangle_with_text(
+                500, 100, 960, y_of_menu_options,
+                self.OPTION_FONT, option["name"]
             )
-            
-            self.menu_items.append(new_item)
 
-            self.canvas.tag_bind(new_item, "<Enter>", lambda e, i=new_item: self.handle_hover(i, True))
-            self.canvas.tag_bind(new_item, "<Leave>", lambda e, i=new_item: self.handle_hover(i))
-            self.canvas.tag_bind(new_item, "<Button-1>", option["function"])
+            self.canvas.tag_bind(option_rectangle, "<Enter>", lambda e, r=option_rectangle: self.handle_hover(r, True))
+            self.canvas.tag_bind(option_rectangle, "<Leave>", lambda e, r=option_rectangle: self.handle_hover(r))
+            self.canvas.tag_bind(option_text, "<Enter>", lambda e, r=option_rectangle: self.handle_hover(r, True))
+            self.canvas.tag_bind(option_text, "<Leave>", lambda e, r=option_rectangle: self.handle_hover(r))
+            self.canvas.tag_bind(option_rectangle, "<Button-1>", option["function"])
+            self.canvas.tag_bind(option_text, "<Button-1>", option["function"])
 
-            y += 120
+            y_of_menu_options += 140
 
     def go_to_screen(self, screen, event=None):
         self.master.load_screen(screen)

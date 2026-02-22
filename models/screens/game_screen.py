@@ -33,7 +33,8 @@ class GameScreen(Screen):
         # ====== Question ======
         self.create_rectangle_with_text(
             1400, 120, 960, 350, ("Arial", 30, "bold"),
-            self.QUIZ_BRAIN.current_round.question
+            self.QUIZ_BRAIN.current_round.question,
+            "center"
         )
 
         # ====== Answers in 2x2 Grid ======
@@ -56,7 +57,7 @@ class GameScreen(Screen):
             self.handle_clicks_of_answers(answer_rectangle, answer, answer_rectangle)
             self.handle_clicks_of_answers(answer_text, answer, answer_rectangle)
 
-    def set_color_of_canvas(self, rectangle_id, is_selected_answer_right):
+    def set_color_of_answer_modal(self, rectangle_id, is_selected_answer_right):
         color = self.RIGTH_ANSWER_MODAL_COLOR if is_selected_answer_right else self.WRONG_ANSWER_MODAL_COLOR
         self.canvas.itemconfig(rectangle_id, fill=color)
 
@@ -89,7 +90,7 @@ class GameScreen(Screen):
     def press_answer(self, selected_answer, rectangle_id):
         self.is_answer_hover_allowed = False
         is_selected_answer_right = self.QUIZ_BRAIN.is_selected_answer_right(selected_answer)
-        self.set_color_of_canvas(rectangle_id, is_selected_answer_right)
+        self.set_color_of_answer_modal(rectangle_id, is_selected_answer_right)
 
         if is_selected_answer_right:
             self.QUIZ_BRAIN.increase_number_of_current_round_by_one()

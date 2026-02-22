@@ -17,20 +17,5 @@ class RulesScreen(Screen):
         return text
     
     def display_rules(self):
-        self.canvas.create_text(
-            960,
-            100,
-            text="Rules",
-            fill="white",
-            font=self.TITLE_FONT
-        )
-
-        self.canvas.create_text(
-            960,
-            600,
-            text=self.text_of_rules,
-            fill=self.TEXT_COLOR,
-            font=("Arial", 20),
-            width=1400,
-            justify="center"
-        )
+        self.create_rectangle_with_text(1400, 160, 960, 100, self.TITLE_FONT, "Rules")
+        self.create_rectangle_with_text(1400, 700, 960, 600, ("Arial", 18), self.text_of_rules, "center")

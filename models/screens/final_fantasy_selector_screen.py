@@ -17,45 +17,38 @@ class FinalFantasySelectorScreen(Screen):
             "Final Fantasy X",
             "Random Final Fantasy"
         ]
-        self.final_fantasy_menu_items = []
 
         # callings
         self.display_background_image("assets/images/midgar-wallpaper.png")
-        self.display_final_fantasy_games_menu_options()
+        self.display_final_fantasy_menu_options()
         self.display_back_button("main_menu_screen")
 
-    def display_final_fantasy_games_menu_options(self):
-        x = 960
-        y = 300
-
-        self.canvas.create_text(
-            x,
-            100,
-            text="Choose a Final Fantasy:",
-            fill="white",
-            font=self.TITLE_FONT
-        )
+    def display_final_fantasy_menu_options(self):
+        self.create_rectangle_with_text(1400, 160, 960, 100, self.TITLE_FONT, "Choose a Final Fantasy")
+        y_of_final_fantasy_titles = 300
 
         for game_title in self.TITLES_OF_FINAL_FANTASY_GAMES:
-            new_item = self.canvas.create_text(
-                x,
-                y,
-                text=game_title,
-                fill=self.TEXT_COLOR,
-                font=("Arial", 30)
-            )
+            (option_rectangle, option_text) = self.create_rectangle_with_text(
+                300, 50, 960, y_of_final_fantasy_titles, ("Arial", 18), game_title)
 
-            self.final_fantasy_menu_items.append(new_item)
-
-            self.canvas.tag_bind(new_item, "<Enter>", lambda e, i=new_item: self.handle_hover(i, True))
-            self.canvas.tag_bind(new_item, "<Leave>", lambda e, i=new_item: self.handle_hover(i))
+            self.canvas.tag_bind(option_rectangle, "<Enter>", lambda e, r=option_rectangle: self.handle_hover(r, True))
+            self.canvas.tag_bind(option_rectangle, "<Leave>", lambda e, r=option_rectangle: self.handle_hover(r))
+            self.canvas.tag_bind(option_text, "<Enter>", lambda e, r=option_rectangle: self.handle_hover(r, True))
+            self.canvas.tag_bind(option_text, "<Leave>", lambda e, r=option_rectangle: self.handle_hover(r))
             self.canvas.tag_bind(
-                new_item, "<Button-1>",
+                option_rectangle,
+                "<Button-1>",
+                lambda e,
+                title=game_title: self.start_game_with_chosen_final_fantasy(title)
+            )
+            self.canvas.tag_bind(
+                option_text,
+                "<Button-1>",
                 lambda e,
                 title=game_title: self.start_game_with_chosen_final_fantasy(title)
             )
 
-            y += 70
+            y_of_final_fantasy_titles += 70
 
     def start_game_with_chosen_final_fantasy(self, title_of_chosen_final_fantasy):
         was_it_random = False
