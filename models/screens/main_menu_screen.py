@@ -3,8 +3,7 @@ from models.screens.screen import Screen
 class MainMenuScreen(Screen):
     def __init__(self, master):
         super().__init__(master)
-        self.title = "Final Fantasy Trivia"
-        self.options = [
+        self.OPTIONS = [
             {
                 "name": "Start Game",
                 "function": lambda e: self.go_to_screen("final_fantasy_selector_screen")
@@ -32,9 +31,9 @@ class MainMenuScreen(Screen):
         x = 960
         y = 600
 
-        self.canvas.create_text(x, 100, text=self.title, fill="white", font=self.TITLE_FONT)
+        self.canvas.create_text(x, 100, text="Final Fantasy Trivia", fill="white", font=self.TITLE_FONT)
 
-        for option in self.options:
+        for option in self.OPTIONS:
             new_item = self.canvas.create_text(
                 x,
                 y,

@@ -133,9 +133,9 @@ class Screen(Frame):
 
         return (modal_title, label_text)
 
-    def confirm_dialog(self, dialog, screen_to_go, title):
+    def confirm_dialog(self, dialog: Toplevel, screen_to_go, title):
         dialog.destroy()
         self.master.load_screen(screen_to_go, title)
 
-    def cancel_dialog(self, dialog):
+    def cancel_dialog(self, dialog: Toplevel):
         dialog.destroy()

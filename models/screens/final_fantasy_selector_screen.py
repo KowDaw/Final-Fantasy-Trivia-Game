@@ -17,7 +17,6 @@ class FinalFantasySelectorScreen(Screen):
             "Final Fantasy X",
             "Random Final Fantasy"
         ]
-        self.title = "Choose a Final Fantasy:"
         self.final_fantasy_menu_items = []
 
         # callings
@@ -32,7 +31,7 @@ class FinalFantasySelectorScreen(Screen):
         self.canvas.create_text(
             x,
             100,
-            text=self.title,
+            text="Choose a Final Fantasy:",
             fill="white",
             font=self.TITLE_FONT
         )
