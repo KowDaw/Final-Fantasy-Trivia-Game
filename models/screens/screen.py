@@ -72,21 +72,6 @@ class Screen(Frame):
 
         return (rectangele_id, text_id)
 
-    def handle_hover_of_answer_rectangles(self, answer_rectangle, current_item):
-        self.canvas.tag_bind(
-            current_item,
-            "<Enter>",
-            lambda e,
-            r=answer_rectangle: self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT)
-        )
-
-        self.canvas.tag_bind(
-            current_item,
-            "<Leave>",
-            lambda e,
-            r=answer_rectangle: self.canvas.itemconfig(r, fill=self.MODAL_COLOR)
-        )
-
     def handle_hover(self, item, should_hover=False):
         appropirate_color = self.HOVER_COLOR if should_hover else self.TEXT_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)

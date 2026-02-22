@@ -49,25 +49,42 @@ class GameScreen(Screen):
             )
 
             # Hover effect
-            self.handle_hover_of_answer_rectangles(answer_rectangle, answer_rectangle)
-            self.handle_hover_of_answer_rectangles(answer_rectangle, answer_text)
+            self.handle_hover_of_answers(answer_rectangle, answer_rectangle)
+            self.handle_hover_of_answers(answer_rectangle, answer_text)
 
             # Handle clicks
-            self.canvas.tag_bind(
-                answer_rectangle,
-                "<Button-1>",
-                lambda e, ans=answer, rect=answer_rectangle: self.press_answer(ans, rect)
-            )
-
-            self.canvas.tag_bind(
-                answer_text,
-                "<Button-1>",
-                lambda e, ans=answer, rect=answer_rectangle: self.press_answer(ans, rect)
-            )
+            self.handle_clicks_of_answers(answer_rectangle, answer, answer_rectangle)
+            self.handle_clicks_of_answers(answer_text, answer, answer_rectangle)
 
     def set_color_of_canvas(self, rectangle_id, is_selected_answer_right):
         color = self.RIGTH_ANSWER_MODAL_COLOR if is_selected_answer_right else self.WRONG_ANSWER_MODAL_COLOR
         self.canvas.itemconfig(rectangle_id, fill=color)
+
+    def handle_hover_of_answers(self, answer_rectangle, current_item):
+        self.canvas.tag_bind(
+            current_item,
+            "<Enter>",
+            lambda e,
+            r=answer_rectangle: self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT)
+            if self.is_answer_hover_allowed
+            else None
+        )
+
+        self.canvas.tag_bind(
+            current_item,
+            "<Leave>",
+            lambda e,
+            r=answer_rectangle: self.canvas.itemconfig(r, fill=self.MODAL_COLOR)
+            if self.is_answer_hover_allowed
+            else None
+        )
+
+    def handle_clicks_of_answers(self, current_item, answer, answer_rectangle):
+        self.canvas.tag_bind(
+            current_item,
+            "<Button-1>",
+            lambda e, ans=answer, rect=answer_rectangle: self.press_answer(ans, rect)
+        )
 
     def press_answer(self, selected_answer, rectangle_id):
         self.is_answer_hover_allowed = False
