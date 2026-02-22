@@ -16,6 +16,9 @@ class Screen(Frame):
         self.BUTTON_COLOR = "#5252A0"
         self.MODAL_COLOR = "#1a1a2e"
         self.MODAL_COLOR_LIGHT = "#333399"
+        self.MODAL_BORDER_COLOR = "#FFC400"
+        self.RIGTH_ANSWER_MODAL_COLOR = "#009B0A"
+        self.WRONG_ANSWER_MODAL_COLOR = "#9B0000"
         self.master: MainApp = master
         self.canvas = Canvas(self, bg="black", highlightthickness=0, bd=0)
 
@@ -42,6 +45,47 @@ class Screen(Frame):
         )
 
         self.canvas.create_window(1800, 1000, window=back_button)
+
+    def create_rectangle_with_text(self, box_width, box_height, x_center, y_center, font, text):
+        x1 = x_center - box_width // 2
+        y1 = y_center - box_height // 2
+        x2 = x_center + box_width // 2
+        y2 = y_center + box_height // 2
+
+        rectangele_id = self.canvas.create_rectangle(
+            x1, y1, x2, y2,
+            fill=self.MODAL_COLOR,
+            outline=self.MODAL_BORDER_COLOR,
+            width=3,
+            tags="hud"
+        )
+
+        text_id = self.canvas.create_text(
+            x_center,
+            y_center,
+            text=text,
+            fill="white",
+            font=font,
+            width=box_width - 20,  # padding
+            tags="hud"
+        )
+
+        return (rectangele_id, text_id)
+
+    def handle_hover_of_answer_rectangles(self, answer_rectangle, current_item):
+        self.canvas.tag_bind(
+            current_item,
+            "<Enter>",
+            lambda e,
+            r=answer_rectangle: self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT)
+        )
+
+        self.canvas.tag_bind(
+            current_item,
+            "<Leave>",
+            lambda e,
+            r=answer_rectangle: self.canvas.itemconfig(r, fill=self.MODAL_COLOR)
+        )
 
     def handle_hover(self, item, should_hover=False):
         appropirate_color = self.HOVER_COLOR if should_hover else self.TEXT_COLOR

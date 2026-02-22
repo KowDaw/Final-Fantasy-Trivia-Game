@@ -8,19 +8,19 @@ class QuizBrain:
         self.LETTERS_OF_ANSWERS = [
             {
                 "letter": "A",
-                "position": (600, 450)
+                "position": (600, 550)
             },
             {
                 "letter": "B",
-                "position": (1320, 450)
+                "position": (1320, 550)
             },
             {
                 "letter": "C",
-                "position": (600, 600)
+                "position": (600, 700)
             },
             {
                 "letter": "D",
-                "position": (1320, 600)
+                "position": (1320, 700)
             }
         ]
         self.title_of_chosen_final_fantasy = title_of_chosen_final_fantasy

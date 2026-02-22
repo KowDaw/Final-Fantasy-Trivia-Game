@@ -24,55 +24,16 @@ class GameScreen(Screen):
 
         self.QUIZ_BRAIN.set_current_round()
 
-        # ====== Number of Round ======
-        self.canvas.create_text(
-            960,
-            100,
-            text=self.QUIZ_BRAIN.title_of_chosen_final_fantasy,
-            fill="white",
-            font=("Arial", 32, "bold"),
-            width=1400,
-            tags="hud"
-        )
-
-        self.canvas.create_text(
-            960,
-            200,
-            text=f"Round {self.QUIZ_BRAIN.number_of_current_round}/{len(self.QUIZ_BRAIN.ROUNDS)}",
-            fill="white",
-            font=("Arial", 32, "bold"),
-            width=1400,
-            tags="hud"
+        # ====== Title and number of round ======
+        self.create_rectangle_with_text(
+            1400, 120, 960, 200, ("Arial", 30, "bold"),
+            f"{self.QUIZ_BRAIN.title_of_chosen_final_fantasy} - Round {self.QUIZ_BRAIN.number_of_current_round}/{len(self.QUIZ_BRAIN.ROUNDS)}"
         )
 
         # ====== Question ======
-        question_box_width = 1400
-        question_box_height = 120
-
-        x_center = 960
-        y_center = 300
-
-        x1 = x_center - question_box_width // 2
-        y1 = y_center - question_box_height // 2
-        x2 = x_center + question_box_width // 2
-        y2 = y_center + question_box_height // 2
-
-        self.canvas.create_rectangle(
-            x1, y1, x2, y2,
-            fill=self.MODAL_COLOR,
-            outline="gold",
-            width=3,
-            tags="hud"
-        )
-
-        self.canvas.create_text(
-            x_center,
-            y_center,
-            text=self.QUIZ_BRAIN.current_round.question,
-            fill="white",
-            font=("Arial", 30, "bold"),
-            width=question_box_width - 40,  # padding
-            tags="hud"
+        self.create_rectangle_with_text(
+            1400, 120, 960, 350, ("Arial", 30, "bold"),
+            self.QUIZ_BRAIN.current_round.question
         )
 
         # ====== Answers in 2x2 Grid ======
@@ -81,53 +42,41 @@ class GameScreen(Screen):
             x, y = self.QUIZ_BRAIN.LETTERS_OF_ANSWERS[i]["position"]
             answer = self.QUIZ_BRAIN.current_round.answers[i]
 
-            # Background rectangle
-            rect = self.canvas.create_rectangle(
-                x-250, y-40, x+250, y+40,
-                fill=self.MODAL_COLOR,
-                outline="gold",
-                width=3,
-                tags="hud"
-            )
-
-            # Answer text
-            text = self.canvas.create_text(
-                x,
-                y,
-                text=f"{letter}: {answer}",
-                fill="white",
-                font=("Arial", 20),
-                tags="hud"
+            # Answer rectangle
+            (answer_rectangle, answer_text) = self.create_rectangle_with_text(
+                600, 80, x, y, ("Arial", 20),
+                f"{letter}) {answer}"
             )
 
             # Hover effect
+            self.handle_hover_of_answer_rectangles(answer_rectangle, answer_rectangle)
+            self.handle_hover_of_answer_rectangles(answer_rectangle, answer_text)
+
+            # Handle clicks
             self.canvas.tag_bind(
-                rect,
-                "<Enter>",
-                lambda e, r=rect: None if not self.is_answer_hover_allowed else self.canvas.itemconfig(r, fill=self.MODAL_COLOR_LIGHT)
+                answer_rectangle,
+                "<Button-1>",
+                lambda e, ans=answer, rect=answer_rectangle: self.press_answer(ans, rect)
             )
 
             self.canvas.tag_bind(
-                rect,
-                "<Leave>",
-                lambda e, r=rect: None if not self.is_answer_hover_allowed else self.canvas.itemconfig(r, fill=self.MODAL_COLOR)
-)
+                answer_text,
+                "<Button-1>",
+                lambda e, ans=answer, rect=answer_rectangle: self.press_answer(ans, rect)
+            )
 
-            # Handle clicks
-            self.canvas.tag_bind(rect, "<Button-1>", lambda e, ans=answer, r=rect: self.press_answer(ans, r))
-            self.canvas.tag_bind(text, "<Button-1>", lambda e, ans=answer, r=rect: self.press_answer(ans, r))
+    def set_color_of_canvas(self, rectangle_id, is_selected_answer_right):
+        color = self.RIGTH_ANSWER_MODAL_COLOR if is_selected_answer_right else self.WRONG_ANSWER_MODAL_COLOR
+        self.canvas.itemconfig(rectangle_id, fill=color)
 
-    def set_color_of_canvas(self, color, rect_id):
-        self.canvas.itemconfig(rect_id, fill=color)
-
-    def press_answer(self, selected_answer, rect_id):
+    def press_answer(self, selected_answer, rectangle_id):
         self.is_answer_hover_allowed = False
+        is_selected_answer_right = self.QUIZ_BRAIN.is_selected_answer_right(selected_answer)
+        self.set_color_of_canvas(rectangle_id, is_selected_answer_right)
 
-        if self.QUIZ_BRAIN.is_selected_answer_right(selected_answer):
-            self.set_color_of_canvas("green", rect_id)
+        if is_selected_answer_right:
             self.QUIZ_BRAIN.increase_number_of_current_round_by_one()
             self.master.increase_player_score_by_one()
             self.after(1500, self.display_hud)
         else:
-            self.set_color_of_canvas("red", rect_id)
             self.after(1500, self.show_confirmation_dialog)
