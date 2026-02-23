@@ -5,6 +5,10 @@ class MainMenuScreen(Screen):
         super().__init__(master)
         self.OPTIONS = [
             {
+                "name": "Create Profile",
+                "function": lambda e: self.go_to_screen("profile_creator_screen")
+            },
+            {
                 "name": "Start Game",
                 "function": lambda e: self.go_to_screen("final_fantasy_selector_screen")
             },
@@ -32,7 +36,7 @@ class MainMenuScreen(Screen):
 
         for option in self.OPTIONS:
             (option_rectangle, option_text) = self.create_rectangle_with_text(
-                500, 100, 960, y_of_menu_options,
+                500, 80, 960, y_of_menu_options,
                 self.OPTION_FONT, option["name"]
             )
 
@@ -43,7 +47,7 @@ class MainMenuScreen(Screen):
             self.canvas.tag_bind(option_rectangle, "<Button-1>", option["function"])
             self.canvas.tag_bind(option_text, "<Button-1>", option["function"])
 
-            y_of_menu_options += 140
+            y_of_menu_options += 120
 
     def go_to_screen(self, screen, event=None):
         self.master.load_screen(screen)

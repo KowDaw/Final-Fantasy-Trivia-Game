@@ -1,10 +1,12 @@
 from tkinter import *
+from utils.utils import read_data
 from models.screens.main_menu_screen import MainMenuScreen
 from models.screens.rules_screen import RulesScreen
 from models.screens.options_screen import OptionsScreen
 from models.screens.final_fantasy_selector_screen import FinalFantasySelectorScreen
 from models.screens.game_screen import GameScreen
 from models.screens.screen import Screen
+from models.screens.profile_creator_screen import ProfileCreatorScreen
 
 class MainApp(Tk):
     def __init__(self):
@@ -14,13 +16,15 @@ class MainApp(Tk):
             "rules_screen": RulesScreen,
             "options_screen": OptionsScreen,
             "final_fantasy_selector_screen": FinalFantasySelectorScreen,
-            "game_screen": GameScreen
+            "game_screen": GameScreen,
+            "profile_creator_screen": ProfileCreatorScreen
         }
         self.current_screen_name = None
         self.attributes("-fullscreen", True)
         self.config(bg="black")
         self.is_fullscreen_on = True
         self.current_screen: Screen = None
+        self.profiles = read_data("data/profiles_data/profiles.json")
         self.player_score = 0
 
         # callings

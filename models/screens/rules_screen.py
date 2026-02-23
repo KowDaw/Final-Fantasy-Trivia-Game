@@ -15,7 +15,7 @@ class RulesScreen(Screen):
             text = file.read()
 
         return text
-    
+
     def display_rules(self):
         self.create_rectangle_with_text(1400, 160, 960, 100, self.TITLE_FONT, "Rules")
         self.create_rectangle_with_text(1400, 700, 960, 600, ("Arial", 18), self.text_of_rules, "center")

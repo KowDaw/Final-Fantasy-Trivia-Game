@@ -9,7 +9,7 @@ class Screen(Frame):
     def __init__(self, master: MainApp):
         super().__init__(master)
         self.TITLE_FONT = ("Arial", 80, "bold")
-        self.OPTION_FONT = ("Arial", 40, "bold")
+        self.OPTION_FONT = ("Arial", 30, "bold")
         self.BUTTON_COLOR = "#5252A0"
         self.MODAL_COLOR = "#17172A"
         self.MODAL_COLOR_LIGHT = "#353579"

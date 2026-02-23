@@ -1,5 +1,5 @@
 from models.quiz_components.round import Round
-import json
+from utils.utils import read_data
 from random import shuffle
 
 class QuizBrain:
@@ -26,26 +26,10 @@ class QuizBrain:
         self.title_of_chosen_final_fantasy = title_of_chosen_final_fantasy
         self.number_of_current_round = 1
         self.current_round = None
-
-    def read_rounds_from_json_file(self, title_of_chosen_final_fantasy: str):
-        roman_numeral = title_of_chosen_final_fantasy.split(" ")[-1]
-        file_path = f"data/rounds_data/ff-{roman_numeral}-rounds.json"
-        
-        try:
-            with open(file_path, "r", encoding="utf-8") as file:
-                rounds = json.load(file)
-            return rounds
-
-        except FileNotFoundError:
-            print(f"File not found: {file_path}")
-            return []
-
-        except json.JSONDecodeError:
-            print(f"Invalid JSON format in: {file_path}")
-            return []
     
-    def get_rounds_with_random_order(self, title_of_chosen_final_fantasy):
-        rounds = self.read_rounds_from_json_file(title_of_chosen_final_fantasy)
+    def get_rounds_with_random_order(self, title_of_chosen_final_fantasy: str):
+        roman_numeral = title_of_chosen_final_fantasy.split(" ")[-1]
+        rounds = read_data(f"data/rounds_data/ff-{roman_numeral}-rounds.json")
         round_classes = [Round(round_data) for round_data in rounds]
         shuffle(round_classes)
 
