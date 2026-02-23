@@ -8,16 +8,15 @@ class GameScreen(Screen):
         self.is_answer_hover_allowed = True
 
         # callings
-        self.display_background_image("assets/images/ff-VII-game_screen_background.png")
-        self.display_hud()
-        self.display_back_button("final_fantasy_selector_screen")
+        self.display_background_image("assets/images/game_screen_background.png")
+        self.display_game_content()
 
-    def display_hud(self):
+    def display_game_content(self):
         # delete the previous state
         self.canvas.delete("hud")
         self.is_answer_hover_allowed = True
 
-        # check the number of current round
+        # check the number of current round and win if there's no more rounds
         if not self.QUIZ_BRAIN.has_more_rounds():
             self.show_confirmation_dialog(is_win=True)
             return
@@ -26,13 +25,13 @@ class GameScreen(Screen):
 
         # ====== Title and number of round ======
         self.create_rectangle_with_text(
-            1400, 120, 960, 200, ("Arial", 30, "bold"),
-            f"{self.QUIZ_BRAIN.title_of_chosen_final_fantasy} - Round {self.QUIZ_BRAIN.number_of_current_round}/{len(self.QUIZ_BRAIN.ROUNDS)}"
+            1400, 120, 960, 80, ("Arial", 30, "bold"),
+            f"{self.QUIZ_BRAIN.title_of_chosen_final_fantasy} - Round {self.QUIZ_BRAIN.number_of_current_round} / {len(self.QUIZ_BRAIN.ROUNDS)}"
         )
 
         # ====== Question ======
         self.create_rectangle_with_text(
-            1400, 120, 960, 350, ("Arial", 30, "bold"),
+            1400, 120, 960, 550, ("Arial", 30, "bold"),
             self.QUIZ_BRAIN.current_round.question,
             "center"
         )
@@ -96,11 +95,11 @@ class GameScreen(Screen):
             self.QUIZ_BRAIN.increase_number_of_current_round_by_one()
             self.master.increase_player_score_by_one()
             self.after(
-                1500,
-                self.display_hud
+                1000,
+                self.display_game_content
             )
         else:
             self.after(
-                1500,
+                1000,
                 lambda: self.show_confirmation_dialog(title=self.QUIZ_BRAIN.title_of_chosen_final_fantasy)
             )

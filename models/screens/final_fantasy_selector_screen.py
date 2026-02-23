@@ -24,7 +24,7 @@ class FinalFantasySelectorScreen(Screen):
         self.display_back_button("main_menu_screen")
 
     def display_final_fantasy_menu_options(self):
-        self.create_rectangle_with_text(1400, 160, 960, 100, self.TITLE_FONT, "Choose a Final Fantasy")
+        self.create_rectangle_with_text(1400, 160, 960, 80, self.TITLE_FONT, "Choose a Final Fantasy")
         y_of_final_fantasy_titles = 300
 
         for game_title in self.TITLES_OF_FINAL_FANTASY_GAMES:
