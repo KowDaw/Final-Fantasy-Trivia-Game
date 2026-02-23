@@ -50,12 +50,12 @@ class FinalFantasySelectorScreen(Screen):
 
             y_of_final_fantasy_titles += 70
 
-    def start_game_with_chosen_final_fantasy(self, title_of_chosen_final_fantasy):
-        was_it_random = False
+    def start_game_with_chosen_final_fantasy(self, title):
+        is_random = False
 
-        if title_of_chosen_final_fantasy == "Random Final Fantasy":
-            was_it_random = True
-            title_of_chosen_final_fantasy = choice(self.TITLES_OF_FINAL_FANTASY_GAMES[0:-1])
+        if title == "Random Final Fantasy":
+            is_random = True
+            title = choice(self.TITLES_OF_FINAL_FANTASY_GAMES[0:-1])
 
         self.master.player_score = 0
-        self.show_confirmation_dialog(was_it_random, title_of_chosen_final_fantasy)
+        self.show_confirmation_dialog(is_start=True, is_random=is_random, title=title)

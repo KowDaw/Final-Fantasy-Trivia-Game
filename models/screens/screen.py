@@ -17,7 +17,7 @@ class Screen(Frame):
         self.RIGTH_ANSWER_MODAL_COLOR = "#009B0A"
         self.WRONG_ANSWER_MODAL_COLOR = "#9B0000"
         self.master: MainApp = master
-        self.canvas = Canvas(self, bg="black", highlightthickness=0, bd=0)
+        self.canvas = Canvas(self, highlightthickness=0, bd=0)
 
         # callings
         self.canvas.pack(fill="both", expand=True)
@@ -74,9 +74,9 @@ class Screen(Frame):
         appropirate_color = self.MODAL_COLOR_LIGHT if should_hover else self.MODAL_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)
 
-    def show_confirmation_dialog(self, was_it_random=None, title=None, is_win=False):
+    def show_confirmation_dialog(self, is_start=False, is_win=False, is_random=False, title=None):
         # Create modal
-        modal_title, label_text = self.create_messages_of_dialog(is_win, was_it_random, title)
+        (modal_title, label_text) = self.create_messages_of_dialog(is_start, is_win, is_random, title)
 
         dialog = Toplevel(self.master)
         dialog.title(modal_title)
@@ -113,54 +113,73 @@ class Screen(Frame):
         button_frame = Frame(dialog, bg=self.MODAL_COLOR)
         button_frame.pack(pady=20)
 
-        if title is None:
-            ok_button = Button(
+        # Creating buttons by conditions
+        if is_start:
+            start_button = self.create_button_of_dialog(
                 button_frame,
-                text="Ok",
-                width=20,
-                command=lambda: self.confirm_dialog(dialog, "main_menu_screen", title),
-                bg=self.BUTTON_COLOR,
-                fg="white"
+                "Start",
+                lambda: self.confirm_dialog(dialog, "game_screen", title)
             )
+            cancel_button = self.create_button_of_dialog(
+                button_frame,
+                "Cancel",
+                lambda: self.cancel_dialog(dialog)
+            )
+
+            start_button.pack(side="left", padx=20)
+            cancel_button.pack(side="right", padx=20)
+        elif is_win:
+            ok_button = self.create_button_of_dialog(
+                button_frame,
+                "Ok",
+                lambda: self.confirm_dialog(dialog, "final_fantasy_selector_screen")
+            )
+
             ok_button.pack(padx=20)
         else:
-            start_button = Button(
+            quit_button = self.create_button_of_dialog(
                 button_frame,
-                text="Start",
-                width=20,
-                command=lambda: self.confirm_dialog(dialog, "game_screen", title),
-                bg=self.BUTTON_COLOR,
-                fg="white"
+                "Quit",
+                lambda: self.confirm_dialog(dialog, "final_fantasy_selector_screen")
             )
-            start_button.pack(side="left", padx=20)
 
-            cancel_button = Button(
+            restart_button = self.create_button_of_dialog(
                 button_frame,
-                text="Cancel",
-                width=20,
-                command=lambda: self.cancel_dialog(dialog),
-                bg=self.BUTTON_COLOR,
-                fg="white"
+                "Restart",
+                lambda: self.confirm_dialog(dialog, "game_screen", title)
             )
-            cancel_button.pack(side="right", padx=20)
 
-    def create_messages_of_dialog(self, is_win, was_it_random=None, title=None):
-        modal_title = ""
-        label_text = ""
+            quit_button.pack(side="left", padx=20)
+            restart_button.pack(side="right", padx=20)
 
-        if is_win:
-            modal_title = "Congratultaions"
-            label_text = f"Congratulations!\nYou answered all of the questions!\nScore: {self.master.player_score}"
-        elif title is None:
-            modal_title = "Game Over"
-            label_text = f"Wrong answer!\nGame over!\nScore: {self.master.player_score}"
+    def create_messages_of_dialog(self, is_start, is_win, is_random=None, title=None) -> tuple:
+        if is_start:
+            return (
+                "Start Confirmation",
+                f"Start quiz from:\n{"Random Final Fantasy" if is_random else title}?"
+            )
+        elif is_win:
+            return (
+                "Congratultaions",
+                f"Congratulations!\nScore: {self.master.player_score}"
+            )
         else:
-            modal_title = "Confirmation"
-            label_text = f"Start quiz from:\n{"Random Final Fantasy" if was_it_random else title}?"
+            return (
+               "Game Over",
+                f"Game over!\nScore: {self.master.player_score}"
+            )
 
-        return (modal_title, label_text)
+    def create_button_of_dialog(self, button_frame, text, action) -> Button:
+        return Button(
+            button_frame,
+            text=text,
+            width=20,
+            command=action,
+            bg=self.BUTTON_COLOR,
+            fg="white"
+        )
 
-    def confirm_dialog(self, dialog: Toplevel, screen_to_go, title):
+    def confirm_dialog(self, dialog: Toplevel, screen_to_go: str, title=None):
         dialog.destroy()
         self.master.load_screen(screen_to_go, title)
 

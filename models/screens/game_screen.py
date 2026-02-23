@@ -95,6 +95,12 @@ class GameScreen(Screen):
         if is_selected_answer_right:
             self.QUIZ_BRAIN.increase_number_of_current_round_by_one()
             self.master.increase_player_score_by_one()
-            self.after(1500, self.display_hud)
+            self.after(
+                1500,
+                self.display_hud
+            )
         else:
-            self.after(1500, self.show_confirmation_dialog)
+            self.after(
+                1500,
+                lambda: self.show_confirmation_dialog(title=self.QUIZ_BRAIN.title_of_chosen_final_fantasy)
+            )
