@@ -43,7 +43,7 @@ class Screen(Frame):
 
         self.canvas.create_window(1800, 1000, window=back_button)
 
-    def create_rectangle_with_text(self, box_width, box_height, x_center, y_center, font, text, justify=None):
+    def create_rectangle_with_text(self, box_width, box_height, x_center, y_center,font, text, justify=None):
         x1 = x_center - box_width // 2
         y1 = y_center - box_height // 2
         x2 = x_center + box_width // 2
@@ -172,6 +172,15 @@ class Screen(Frame):
     def create_button_of_dialog(self, button_frame, text, action) -> Button:
         return Button(
             button_frame,
+            text=text,
+            width=20,
+            command=action,
+            bg=self.BUTTON_COLOR,
+            fg="white"
+        )
+    
+    def create_button_of_profile_form(self, text, action):
+        return Button(
             text=text,
             width=20,
             command=action,
