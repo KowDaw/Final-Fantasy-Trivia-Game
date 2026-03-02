@@ -58,6 +58,9 @@ class MainApp(Tk):
     def increase_player_score_by_one(self):
         self.player_score += 1
 
+    def set_player_score_to_zero(self):
+        self.player_score = 0
+
     def collect_all_existing_profiles(self, file_path):
         profiles_data = read_data(file_path)
 

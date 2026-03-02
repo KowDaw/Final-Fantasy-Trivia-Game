@@ -8,6 +8,7 @@ class GameScreen(Screen):
         self.is_answer_hover_allowed = True
 
         # callings
+        self.master.set_player_score_to_zero()
         self.display_background_image("assets/images/game_screen_background.png")
         self.display_game_content()
 
