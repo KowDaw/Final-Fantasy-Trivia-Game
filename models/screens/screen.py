@@ -74,9 +74,9 @@ class Screen(Frame):
         appropirate_color = self.MODAL_COLOR_LIGHT if should_hover else self.MODAL_COLOR
         self.canvas.itemconfig(item, fill=appropirate_color)
 
-    def show_confirmation_dialog(self, is_start=False, is_win=False, is_random=False, title=None):
+    def show_confirmation_dialog(self, is_start=False, is_win=False, is_random=False, title=None, created_profile_name=None):
         # Create modal
-        (modal_title, label_text) = self.create_messages_of_dialog(is_start, is_win, is_random, title)
+        modal_title, label_text = self.create_messages_of_dialog(is_start, is_win, is_random, title, created_profile_name)
 
         dialog = Toplevel(self.master)
         dialog.title(modal_title)
@@ -114,7 +114,30 @@ class Screen(Frame):
         button_frame.pack(pady=20)
 
         # Creating buttons by conditions
-        if is_start:
+        if created_profile_name is not None:
+            if len(created_profile_name) > 0:
+                yes_button = self.create_button_of_dialog(
+                    button_frame,
+                    "Yes",
+                    lambda: self.confirm_dialog(dialog, "main_menu_screen")
+                )
+                no_button = self.create_button_of_dialog(
+                    button_frame,
+                    "No",
+                    lambda: self.cancel_dialog(dialog)
+                )
+
+                yes_button.pack(side="left", padx=20)
+                no_button.pack(side="right", padx=20)
+            else:
+                ok_button = self.create_button_of_dialog(
+                    button_frame,
+                    "Ok",
+                    lambda: self.cancel_dialog(dialog)
+                )
+
+                ok_button.pack(padx=20)
+        elif is_start:
             start_button = self.create_button_of_dialog(
                 button_frame,
                 "Start",
@@ -152,8 +175,19 @@ class Screen(Frame):
             quit_button.pack(side="left", padx=20)
             restart_button.pack(side="right", padx=20)
 
-    def create_messages_of_dialog(self, is_start, is_win, is_random=None, title=None) -> tuple:
-        if is_start:
+    def create_messages_of_dialog(self, is_start, is_win, is_random=None, title=None, created_profile_name=None) -> tuple:
+        if created_profile_name is not None:
+            if len(created_profile_name) > 0:
+                return (
+                    "Profile Name Confirmation",
+                    f"{created_profile_name}\nAre you sure?"
+                )
+            else:
+                return (
+                    "Profile Name Confirmation",
+                    f"Input field is empty!\nPlease enter a name?"
+                )
+        elif is_start:
             return (
                 "Start Confirmation",
                 f"Start quiz from:\n{"Random Final Fantasy" if is_random else title}?"

@@ -29,12 +29,18 @@ class ProfileCreatorScreen(Screen):
 
     def display_profile_form(self):
         self.create_rectangle_with_text(1400, 160, 960, 100, self.TITLE_FONT, "Create a new Profile")
+        self.name_rectangle, self.name_text = self.create_rectangle_with_text(460, 80, 960, 250, self.OPTION_FONT, "_")
 
-        self.name_rectangle, self.name_text = self.create_rectangle_with_text(
-            500, 80, 960, 250,
-            self.OPTION_FONT,
-            "_"
-        )
+        # OK BUTTON
+        ok_rectangle, ok_text = self.create_rectangle_with_text(100, 80, 1260, 250, self.OPTION_FONT, "OK")
+
+        self.canvas.tag_bind(ok_rectangle, "<Enter>", lambda e, r=ok_rectangle: self.handle_hover(r, True))
+        self.canvas.tag_bind(ok_rectangle, "<Leave>", lambda e, r=ok_rectangle: self.handle_hover(r))
+        self.canvas.tag_bind(ok_text, "<Enter>", lambda e, r=ok_rectangle: self.handle_hover(r, True))
+        self.canvas.tag_bind(ok_text, "<Leave>", lambda e, r=ok_rectangle: self.handle_hover(r))
+
+        self.canvas.tag_bind(ok_rectangle, "<Button-1>", lambda e: self.ask_about_created_profile_name(self.profile_name_under_creation))
+        self.canvas.tag_bind(ok_text, "<Button-1>", lambda e: self.ask_about_created_profile_name(self.profile_name_under_creation))
 
         # CHARACTER BUTTONS
         columns = 6
@@ -148,3 +154,6 @@ class ProfileCreatorScreen(Screen):
                 new_char = origin.lower()
 
             self.canvas.itemconfig(text_item, text=new_char)
+
+    def ask_about_created_profile_name(self, created_profile_name):
+        self.show_confirmation_dialog(created_profile_name=created_profile_name)
