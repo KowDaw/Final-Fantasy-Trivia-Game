@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING
 from tkinter import Frame, Canvas, Button, Toplevel, Label
 from PIL import Image, ImageTk
+from utils.utils import write_data
 
 if TYPE_CHECKING:
     from app.app import MainApp
@@ -119,7 +120,7 @@ class Screen(Frame):
                 yes_button = self.create_button_of_dialog(
                     button_frame,
                     "Yes",
-                    lambda: self.confirm_dialog(dialog, "main_menu_screen")
+                    lambda: self.save_profile_to_json_file(created_profile_name, dialog)
                 )
                 no_button = self.create_button_of_dialog(
                     button_frame,
@@ -228,3 +229,12 @@ class Screen(Frame):
 
     def cancel_dialog(self, dialog: Toplevel):
         dialog.destroy()
+
+    def save_profile_to_json_file(self, new_profile_name, dialog_to_close):
+        new_profile = {
+            "name": new_profile_name,
+            "number_of_wins": 0,
+            "completed_final_fantasy_quizes": []
+        }
+        write_data("data/profiles_data/profiles.json", new_profile)
+        self.confirm_dialog(dialog_to_close, "main_menu_screen")

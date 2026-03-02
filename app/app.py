@@ -1,5 +1,6 @@
 from tkinter import *
 from utils.utils import read_data
+from models.profiles.profile import Profile
 from models.screens.main_menu_screen import MainMenuScreen
 from models.screens.rules_screen import RulesScreen
 from models.screens.options_screen import OptionsScreen
@@ -24,7 +25,7 @@ class MainApp(Tk):
         self.config(bg="black")
         self.is_fullscreen_on = True
         self.current_screen: Screen = None
-        self.profiles = read_data("data/profiles_data/profiles.json")
+        self.profiles = self.collect_all_existing_profiles("data/profiles_data/profiles.json")
         self.player_score = 0
 
         # callings
@@ -56,3 +57,14 @@ class MainApp(Tk):
 
     def increase_player_score_by_one(self):
         self.player_score += 1
+
+    def collect_all_existing_profiles(self, file_path):
+        profiles_data = read_data(file_path)
+
+        if len(profiles_data) == 0:
+            return []
+        
+        return [
+            Profile(data["name"], data["number_of_wins"], data["completed_final_fantasy_quizes"])
+            for data in profiles_data
+        ]
